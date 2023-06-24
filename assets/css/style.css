@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-family: Rye, sans-serif;
+    color: #463c2a;
+    display: flex;
+    flex-direction: column;
+}
+
+/* heading styling */
+
+header {
+    background-color: aquamarine;
+}
+
+/* game area stylying */
+
+
+.game_area {
+    background-color: yellow;
+    height: 750px;
+    display: flex;
+}
+
+.decision_selection {
+    background-color: red;
+    width: 15%;
+}
+
+.decision_display {
+    background-color: blue;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.selection_option {
+    background-color: aliceblue;
+    height: 50px; 
+}
+
+.ammo_display {
+    background-color: lightgreen;
+    height: 75px;
+}
+
+/* footer stylying */
+
+footer {
+    background-color: lightcoral;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Wild West chance game</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the old wild west!</h1>
+        <p>As it is use to you are in a stand off! Both you and XXXX have one shot in the gun right now, and you have three options: shoot, reload or take cover. What are you going to do?</p>
+    </header>
+
+    <section class="game_area">
+        <div class="decision_selection" id="user_selection_menu">
+            <div class="selection_option"> 
+                <p>test shoot</p>
+            </div>
+            <div class="selection_option"> 
+                <p>test reload</p>
+            </div>
+            <div class="selection_option"> 
+                <p>test cover</p>
+            </div>
+            <div class="ammo_display">
+                <p>test ammo</p> 
+            </div>
+        </div>
+        <div class="decision_display" id="user_selection_decision"></div>
+        <div class="decision_display" id="cpu_selection_decision"></div>
+        <div class="decision_selection" id="cpu_selection_menu">
+            <div class="selection_option"> 
+                <p>test shoot</p>
+            </div>
+            <div class="selection_option"> 
+                <p>test reload</p>
+            </div>
+            <div class="selection_option"> 
+                <p>test cover</p>
+            </div>
+            <div class="ammo_display">
+                <p>test ammo</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h1>Game rules:</h1>
+        <p>Make a selection on what to do: shoot, reload or take cover. If you shoot and the oponent covers or shoots at you, you waste a shoot. If you shoot when you opponent is reloading, Congratulations! You won, however, if your opponents shoots at you when you are realoading, you lost!</p>
+    </footer>
+    
+    <script src="assets/script/script.js"></script>
+</body>
+</html>
