@@ -23,14 +23,31 @@ header {
 
 
 .game_area {
-    background-color: yellow;
     height: 750px;
     display: flex;
 }
 
 .decision_selection {
-    background-color: red;
     width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.decision_selection img {
+    width: 100%;
+    height: 50px;
+}
+
+#user_selection_menu img {
+    background-color: green;
+}
+
+#user_selection_menu img:hover {
+    background-color: yellow;
+}
+
+#cpu_selection_menu img {
+    background-color: red;
 }
 
 .decision_display {

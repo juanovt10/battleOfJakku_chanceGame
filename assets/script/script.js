@@ -64,7 +64,8 @@ function pushAnswer(userSelection) {
     }
     
     console.log(userResult);
-    
+
+    let userAmmo = parseInt(document.getElementById('user_ammo').innerText); 
     let cpuAmmo = parseInt(document.getElementById('cpu_ammo').innerText);
 
     if (cpuAmmo != 0) {
@@ -124,11 +125,19 @@ function checkAnswer(userResult, cpuResult) {
     }
 }
 
+
+/**
+ * This function restarts the ammo of both the user and cpu after, winning, losing or restarting
+ */
 function restartAmmo() {
     document.getElementById('user_ammo').innerText = 1;
     document.getElementById('cpu_ammo').innerText = 1;
 }
 
+
+/**
+ * This function restarts the duels won count and the ammo to 1 each
+ */
 function restartGame() {
     document.getElementById('user_score').innerText = 0;
     document.getElementById('cpu_score').innerText = 0;
