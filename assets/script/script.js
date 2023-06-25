@@ -42,20 +42,29 @@ function ammoCheck() {
     }
 }
 
+/**
+ * This function is comprised in two parts. The first one assesses the user selection, 
+ * allocates it a number from 0 to 2 and pushes the result into the main div. The second
+ * part assesses the amount of ammo the cpu has, and then makes create a random number between 
+ * 0 and 1, or 0 and 2 if it has ammo and displays the result in the main div. 
+ */
 function pushAnswer(userSelection) {
 
+    let userSelectionArea = document.getElementById('user_selection_decision');
+
     if (userSelection === 'cover') {
-        //push cover into the big screen
+        userSelectionArea.innerHTML = 'cover';
         userResult = 0;
     } else if (userSelection === 'reload') {
-        //push reload into the big screen
+        userSelectionArea.innerHTML = 'reload';
         userResult = 1;
     } else if (userSelection === 'shoot') {
-        //push shoot into the big screen
+        userSelectionArea.innerHTML = 'shoot';
         userResult = 2;
     }
     
     console.log(userResult);
+    
     let cpuAmmo = parseInt(document.getElementById('cpu_ammo').innerText);
 
     if (cpuAmmo != 0) {
@@ -64,30 +73,46 @@ function pushAnswer(userSelection) {
         cpuResult = Math.floor(Math.random() * 2)
     }
 
+    let cpuSelectionArea = document.getElementById('cpu_selection_decision');
+
     console.log(cpuResult)
 
     if (cpuResult === 0) {
-        // push the cover answer
+        cpuSelectionArea.innerText = 'cover';
     } else if (cpuResult === 1) {
         document.getElementById('cpu_ammo').innerText = ++cpuAmmo;
-        //push the reload answer
+        cpuSelectionArea.innerText = 'reload';
     } else if (cpuResult === 2) {
-        //push the shoot answer
+        cpuSelectionArea.innerText = 'shoot';
         document.getElementById('cpu_ammo').innerText = --cpuAmmo
     }
 
     checkAnswer(userResult, cpuResult);
 }
 
+
+/**
+ * This function checks the results of both the cpu and the user, and assesses the outcome. 
+ * - If both cover, the game continues. 
+ * - If both reload or shoot simultaneously, the game continues. 
+ * - The one that shoots when the other is reloading, wins and increased the duels won record.
+ */
+
 function checkAnswer(userResult, cpuResult) {
+
+    let userScore = parseInt(document.getElementById('user_score').innerText);
+    let cpuScore = parseInt(document.getElementById('cpu_score').innerText);
+    
     if (userResult === 0 || cpuResult === 0) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 1) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 2) {
         console.log('gameOver');
+        document.getElementById('cpu_score').innerText = ++cpuScore;
     } else if (userResult === 2 && cpuResult === 1) {
         console.log('youWin');
+        document.getElementById('user_score').innerText = ++userScore;
     } else if (userResult === 2 && cpuResult === 2) {
         console.log('gameContinues');
     }
