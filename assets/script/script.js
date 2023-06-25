@@ -112,14 +112,18 @@ function checkAnswer(userResult, cpuResult) {
     } else if (userResult === 1 && cpuResult === 2) {
 
         console.log('gameOver');
-        document.getElementById('cpu_score').innerText = ++cpuScore;
         restartAmmo();
+        document.getElementById('cpu_score').innerText = ++cpuScore;
+        alert("XXXX has shoot you when you are reloading, he will keep tormenting XXXX town")
+        
 
     } else if (userResult === 2 && cpuResult === 1) {
 
         console.log('youWin');
-        document.getElementById('user_score').innerText = ++userScore;
         restartAmmo();
+        document.getElementById('user_score').innerText = ++userScore;
+        alert("Congratulations! You have beaten XXXX in the most epic standoff XXXX have seen!")
+        
 
     } else if (userResult === 2 && cpuResult === 2) {
         console.log('gameContinues');
