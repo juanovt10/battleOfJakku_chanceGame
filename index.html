@@ -15,33 +15,33 @@
 
     <section class="game_area">
         <div class="decision_selection" id="user_selection_menu">
-            <div class="selection_option"> 
-                <p>test shoot</p>
-            </div>
-            <div class="selection_option"> 
-                <p>test reload</p>
-            </div>
-            <div class="selection_option"> 
+            <button class="selection_option" data-type="cover"> 
                 <p>test cover</p>
-            </div>
+            </button>
+            <button class="selection_option" data-type="reload"> 
+                <p>test reload</p>
+            </button>
+            <button class="selection_option" data-type="shoot"> 
+                <p>test shoot</p>
+            </button>
             <div class="ammo_display">
-                <p>test ammo</p> 
+                <p>Current ammunition: <span id="user_ammo">1</span></p> 
             </div>
         </div>
         <div class="decision_display" id="user_selection_decision"></div>
         <div class="decision_display" id="cpu_selection_decision"></div>
         <div class="decision_selection" id="cpu_selection_menu">
             <div class="selection_option"> 
-                <p>test shoot</p>
+                <p>test cover</p>
             </div>
             <div class="selection_option"> 
                 <p>test reload</p>
             </div>
             <div class="selection_option"> 
-                <p>test cover</p>
+                <p>test shoot</p>
             </div>
             <div class="ammo_display">
-                <p>test ammo</p>
+                <p>Current ammunition: <span id="cpu_ammo" >1</span></p> 
             </div>
         </div>
     </section>
