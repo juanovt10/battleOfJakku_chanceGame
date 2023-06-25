@@ -53,13 +53,14 @@ function pushAnswer(userSelection) {
     let userSelectionArea = document.getElementById('user_selection_decision');
 
     if (userSelection === 'cover') {
-        userSelectionArea.innerHTML = 'cover';
+
+        userSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Sheriff icon">';
         userResult = 0;
     } else if (userSelection === 'reload') {
-        userSelectionArea.innerHTML = 'reload';
+        userSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
         userResult = 1;
     } else if (userSelection === 'shoot') {
-        userSelectionArea.innerHTML = 'shoot';
+        userSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
         userResult = 2;
     }
     
@@ -78,13 +79,13 @@ function pushAnswer(userSelection) {
 
     console.log(cpuResult)
 
-    if (cpuResult === 0) {
-        cpuSelectionArea.innerText = 'cover';
+    if (cpuResult === 0) { 
+        cpuSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Cover icon">';
     } else if (cpuResult === 1) {
         document.getElementById('cpu_ammo').innerText = ++cpuAmmo;
-        cpuSelectionArea.innerText = 'reload';
+        cpuSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
     } else if (cpuResult === 2) {
-        cpuSelectionArea.innerText = 'shoot';
+        cpuSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
         document.getElementById('cpu_ammo').innerText = --cpuAmmo
     }
 

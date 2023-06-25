@@ -19,7 +19,6 @@ header {
     background-color: #ebc275;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     padding: 25px;
 }
 
@@ -43,7 +42,7 @@ p {
 
 
 .game_area {
-    height: 750px;
+    /* height: 750px; */
     display: flex;
     padding: 25px;
     background-color: #463c2a;
@@ -92,7 +91,27 @@ button {
 
 .decision_display img {
     width: 80%;
-    height: auto;
+    height: 15rem;
+}
+
+.decision_display p {
+    background-color: #463c2a;
+    color: #ebc275;
+    padding: 10px;
+}
+
+.restart_game {
+    height: 75px;
+    background-color: #463c2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restart_game button {
+    padding: 10px 50px; 
+    background-color: #ebc275;
+    font-family: Rye, sans-serif;
 }
 
 /* footer stylying */
