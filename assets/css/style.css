@@ -117,5 +117,15 @@ button {
 /* footer stylying */
 
 footer {
-    background-color: lightcoral;
+    padding: 25px;
+    background-color: #ebc275;
+}
+
+footer ul {
+    list-style-type: circle;
+    margin-left: 30px;
+}
+
+footer li {
+    margin: 10px 0;
 }
