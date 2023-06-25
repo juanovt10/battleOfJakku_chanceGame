@@ -16,7 +16,27 @@ body {
 /* heading styling */
 
 header {
-    background-color: aquamarine;
+    background-color: #ebc275;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 25px;
+}
+
+h1 {
+    margin-bottom: 5px; 
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p {
+    margin: 5px 50px;
+    font-size: 0.8rem;
+    text-align: left;
 }
 
 /* game area stylying */
@@ -25,46 +45,54 @@ header {
 .game_area {
     height: 750px;
     display: flex;
+    padding: 25px;
+    background-color: #463c2a;
+    color: #ebc275;
+}
+
+#cpu_ammo_display {
+    text-align: right;
 }
 
 .decision_selection {
-    width: 15%;
+    width: 20%;
     display: flex;
     flex-direction: column;
 }
 
 .decision_selection img {
-    width: 100%;
-    height: 50px;
+    width: 80%;
+    height: 200px;
 }
 
-#user_selection_menu img {
-    background-color: green;
+#user_selection_menu img,
+.selection_option,
+button {
+    background-color: #463c2a;
+    text-align: center;
 }
 
 #user_selection_menu img:hover {
     background-color: yellow;
 }
 
-#cpu_selection_menu img {
-    background-color: red;
-}
-
 .decision_display {
     background-color: blue;
-    width: 35%;
+    width: 30%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.selection_option {
-    background-color: aliceblue;
-    height: 50px; 
+#user_selection_decision,
+#cpu_selection_decision {
+    text-align: center;
+    padding: 50px 10px;
 }
 
-.ammo_display {
-    background-color: lightgreen;
-    height: 75px;
+.decision_display img {
+    width: 80%;
+    height: auto;
 }
 
 /* footer stylying */
