@@ -108,17 +108,30 @@ function checkAnswer(userResult, cpuResult) {
     } else if (userResult === 1 && cpuResult === 1) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 2) {
+
         console.log('gameOver');
         document.getElementById('cpu_score').innerText = ++cpuScore;
+        restartAmmo();
+
     } else if (userResult === 2 && cpuResult === 1) {
+
         console.log('youWin');
         document.getElementById('user_score').innerText = ++userScore;
+        restartAmmo();
+
     } else if (userResult === 2 && cpuResult === 2) {
         console.log('gameContinues');
     }
 }
 
+function restartAmmo() {
+    document.getElementById('user_ammo').innerText = 1;
+    document.getElementById('cpu_ammo').innerText = 1;
+}
+
 function restartGame() {
     document.getElementById('user_score').innerText = 0;
     document.getElementById('cpu_score').innerText = 0;
+
+    restartAmmo();
 }
