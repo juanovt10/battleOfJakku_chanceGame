@@ -119,5 +119,6 @@ function checkAnswer(userResult, cpuResult) {
 }
 
 function restartGame() {
-    location.reload();
+    document.getElementById('user_score').innerText = 0;
+    document.getElementById('cpu_score').innerText = 0;
 }
