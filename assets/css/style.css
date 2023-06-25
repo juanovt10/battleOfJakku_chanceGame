@@ -59,9 +59,14 @@ p {
     flex-direction: column;
 }
 
+.ammo_display {
+    margin: 20px 0;
+}
+
 .decision_selection img {
     width: 80%;
     height: 200px;
+    padding: 10px;
 }
 
 #user_selection_menu img,
