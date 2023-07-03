@@ -100,6 +100,33 @@ function pushAnswer(userSelection) {
  * - The one that shoots when the other is reloading, wins and increased the duels won record.
  */
 
+
+let userHealth = document.getElementById('user_health_bar').style.height;
+let cpuHealth = document.getElementById('cpu_health_bar').style.height;
+
+if (userHealth.length === 3) {
+    userHealth = userHealth.slice(3);
+} else {
+    userHealth = userHealth.slice(2);
+}
+
+if (cpuHealth.length === 3) {
+    cpuHealth = userHealth.slice(3);
+} else {
+    cpuHealth = userHealth.slice(2);
+}
+
+let healthStatus = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// let status = '';
+
+for (currentStatus of healthStatus) {
+    if (currentStatus == healthStatus) {
+        currentStatus = --currentStatus
+    } 
+}
+
+
+
 function checkAnswer(userResult, cpuResult) {
 
     let userScore = document.getElementById('user_health_bar');
