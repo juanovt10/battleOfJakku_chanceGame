@@ -59,7 +59,7 @@ p {
 
 .health_bar_full {
     background-color: white;
-    height: 25vh;
+    height: 80%;
     width: 10%;
     border: 1px solid white;
 }
@@ -70,32 +70,48 @@ p {
     background-color: black;
 }
 
-progress {
-    transform: rotate(270deg);
-    color: lightblue;
-    width: 80%;
-}
-
-.health_logo {
-    height: 20%;
-    width: 10%;
-    background-color: black;
-}
-
-.ammo_display {
-    background-color: green;
-    width: 10%;
-}
-
 .cpu_space_ship {
     background-color: yellow;
     width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.cpu_space_ship div {
+    height: 80%;
+    background-color: lightblue;
+    width: 40%;
+}
+
+.ammo_display {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ammo_image {
+    height: 20%;
+    width: 20%; 
+    background-color: red;
+    margin-bottom: 10px;
+}
+
+.ammo_display p {
+    font-size: 2rem; 
+}
+
+
+
 
 .user_space_ship {
     background-color: blue;
     width: 80%;
 }
+
+
 
 
 
