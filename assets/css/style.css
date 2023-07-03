@@ -67,16 +67,17 @@ br {
 }
 
 .health_bar_full {
-    background-color: white;
+    background-color: black;
     height: 80%;
     width: 10%;
     border: 1px solid white;
 }
 
-.health_bar {
-    height: 50%; 
+#cpu_health_bar,
+#user_health_bar {
+    height: 0%; 
     width: 100%;
-    background-color: black;
+    background-color: white;
 }
 
 .cpu_space_ship {
@@ -140,10 +141,10 @@ footer button {
     background-color: blue;
 }
 
-
-
-
-
+button img {
+    width: 100%;
+    height: 100%;
+}
 
 
 /* .game_area {

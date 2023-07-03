@@ -54,13 +54,13 @@ function pushAnswer(userSelection) {
 
     if (userSelection === 'cover') {
 
-        userSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Sheriff icon">';
+        // userSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Sheriff icon">';
         userResult = 0;
     } else if (userSelection === 'reload') {
-        userSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
+        // userSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
         userResult = 1;
     } else if (userSelection === 'shoot') {
-        userSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
+        // userSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
         userResult = 2;
     }
     
@@ -80,12 +80,12 @@ function pushAnswer(userSelection) {
     console.log(cpuResult)
 
     if (cpuResult === 0) { 
-        cpuSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Cover icon">';
+        // cpuSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Cover icon">';
     } else if (cpuResult === 1) {
         document.getElementById('cpu_ammo').innerText = ++cpuAmmo;
-        cpuSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
+        // cpuSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
     } else if (cpuResult === 2) {
-        cpuSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
+        // cpuSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
         document.getElementById('cpu_ammo').innerText = --cpuAmmo
     }
 
@@ -102,9 +102,12 @@ function pushAnswer(userSelection) {
 
 function checkAnswer(userResult, cpuResult) {
 
-    let userScore = parseInt(document.getElementById('user_score').innerText);
-    let cpuScore = parseInt(document.getElementById('cpu_score').innerText);
+    let userScore = document.getElementById('user_health_bar');
+    let cpuScore = document.getElementById("cpu_health_bar");
     
+    console.log(userScore.style);
+    console.log(cpuScore.style);
+
     if (userResult === 0 || cpuResult === 0) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 1) {
@@ -113,7 +116,7 @@ function checkAnswer(userResult, cpuResult) {
 
         console.log('gameOver');
         restartAmmo();
-        document.getElementById('cpu_score').innerText = ++cpuScore;
+        document.getElementById('user_health_bar').style.height = '90%';
         alert("XXXX has shoot you when you are reloading, he will keep tormenting XXXX town")
         
 
@@ -121,7 +124,7 @@ function checkAnswer(userResult, cpuResult) {
 
         console.log('youWin');
         restartAmmo();
-        document.getElementById('user_score').innerText = ++userScore;
+        document.getElementById('cpu_health_bar').style.height = '90%';
         alert("Congratulations! You have beaten XXXX in the most epic standoff XXXX have seen!")
         
 
