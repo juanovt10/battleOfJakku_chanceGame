@@ -8,15 +8,17 @@
 
 body {
     font-family: Rye, sans-serif;
-    color: #463c2a;
+    /* color: #463c2a; */
+    color:  yellow;
     display: flex;
     flex-direction: column;
+    background-image: url(../images/space_background.jpg);
 }
 
 /* heading styling */
 
 header {
-    background-color: #ebc275;
+    /* background-color: #ebc275; */
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -40,16 +42,73 @@ p {
 
 /* game area stylying */
 
-
 .game_area {
-    /* height: 750px; */
     display: flex;
-    padding: 25px;
-    background-color: #463c2a;
-    color: #ebc275;
+    width: 100%;
+    height: 35vh;
 }
 
-#cpu_ammo_display {
+.health_area {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.health_bar_full {
+    background-color: white;
+    height: 25vh;
+    width: 10%;
+    border: 1px solid white;
+}
+
+.health_bar {
+    height: 50%; 
+    width: 100%;
+    background-color: black;
+}
+
+progress {
+    transform: rotate(270deg);
+    color: lightblue;
+    width: 80%;
+}
+
+.health_logo {
+    height: 20%;
+    width: 10%;
+    background-color: black;
+}
+
+.ammo_display {
+    background-color: green;
+    width: 10%;
+}
+
+.cpu_space_ship {
+    background-color: yellow;
+    width: 80%;
+}
+
+.user_space_ship {
+    background-color: blue;
+    width: 80%;
+}
+
+
+
+/* .game_area {
+    height: 750px; */
+    /* display: flex;
+    padding: 25px; */
+    /* background-color: #463c2a; */
+    /* color: #ebc275;
+    color: yellow;
+}
+
+/* #cpu_ammo_display {
     text-align: right;
 }
 
@@ -80,9 +139,9 @@ button {
     background-color: yellow;
 }
 
-.decision_display {
-    background-color: blue;
-    width: 30%;
+.decision_display { */
+    /* background-color: blue; */
+    /* width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,13 +176,17 @@ button {
     padding: 10px 50px; 
     background-color: #ebc275;
     font-family: Rye, sans-serif;
-}
+} */
 
 /* footer stylying */
 
 footer {
     padding: 25px;
-    background-color: #ebc275;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #ebc275; */
 }
 
 footer ul {
