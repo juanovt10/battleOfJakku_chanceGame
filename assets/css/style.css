@@ -48,6 +48,13 @@ p {
     height: 35vh;
 }
 
+br {
+    width: 100%;
+    content: '';
+    display: block;
+    border-bottom:1px dashed yellow;
+}
+
 .health_area {
     width: 20%;
     display: flex;
@@ -71,7 +78,6 @@ p {
 }
 
 .cpu_space_ship {
-    background-color: yellow;
     width: 80%;
     display: flex;
     justify-content: center;
@@ -103,13 +109,20 @@ p {
     font-size: 2rem; 
 }
 
-
-
-
 .user_space_ship {
-    background-color: blue;
     width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.user_space_ship div {
+    height: 80%;
+    background-color: lightblue;
+    width: 40%;
+}
+
+
 
 
 
