@@ -31,11 +31,13 @@ function checkHealth() {
     let currentCpuHealth = document.getElementById('cpu_health_bar').style.height;
 
     if (currentUserHealth === '100%') {
-        alert('YOU LOST');
-        restartGame();
+        let losePopup = document.getElementById('cpu_win_popup'); 
+        losePopup.classList.add('open_popup');
+        
     } else if (currentCpuHealth === '100%') {
-        alert('YOU WON');
-        restartGame();
+        let winPopup = document.getElementById('user_win_popup'); 
+        winPopup.classList.add('open_popup');
+    
     }
 }
 
@@ -174,6 +176,12 @@ function restartAmmo() {
 function restartGame() {
     document.getElementById('user_health_bar').style.height = '0%';
     document.getElementById('cpu_health_bar').style.height = '0%';
+
+    let winPopup = document.getElementById('user_win_popup'); 
+    winPopup.classList.remove('open_popup');
+
+    let losePopup = document.getElementById('cpu_win_popup'); 
+    losePopup.classList.remove('open_popup');
 
     restartAmmo();
 }

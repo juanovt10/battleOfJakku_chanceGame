@@ -157,93 +157,39 @@ button img {
     height: 100%;
 }
 
-
-/* .game_area {
-    height: 750px; */
-    /* display: flex;
-    padding: 25px; */
-    /* background-color: #463c2a; */
-    /* color: #ebc275;
-    color: yellow;
-}
-
-/* #cpu_ammo_display {
-    text-align: right;
-}
-
-.decision_selection {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-}
-
-.ammo_display {
-    margin: 20px 0;
-}
-
-.decision_selection img {
-    width: 80%;
-    height: 200px;
-    padding: 10px;
-}
-
-#user_selection_menu img,
-.selection_option,
-button {
-    background-color: #463c2a;
-    text-align: center;
-}
-
-#user_selection_menu img:hover {
-    background-color: yellow;
-}
-
-.decision_display { */
-    /* background-color: blue; */
-    /* width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#user_selection_decision,
-#cpu_selection_decision {
-    text-align: center;
-    padding: 50px 10px;
-}
-
-.decision_display img {
-    width: 80%;
-    height: 15rem;
-}
-
-.decision_display p {
-    background-color: #463c2a;
-    color: #ebc275;
-    padding: 10px;
-}
-
 .restart_game {
-    height: 75px;
-    background-color: #463c2a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 400px; 
+    background-color: black;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 30px;
+    color: yellow;
+    visibility: hidden;
+}
+
+.open_popup {
+    visibility: visible;
+}
+
+
+
+.restart_game h1 {
+    margin-bottom: 20px;
+}
+
+.restart_game p {
+    margin-bottom: 20px;
 }
 
 .restart_game button {
-    padding: 10px 50px; 
-    background-color: #ebc275;
     font-family: Rye, sans-serif;
-} */
-
-/* footer stylying */
-
-footer ul {
-    list-style-type: circle;
-    margin-left: 30px;
-}
-
-footer li {
-    margin: 10px 0;
+    width: 50%;
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: yellow;
+    color: black;
 }
