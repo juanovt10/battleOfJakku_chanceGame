@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
 })
 
+/**
+ * This function is to close the intial and no ammo popup
+ */
+
 function closePopup() {
     let startGamePopup = document.getElementById('start_game_popup');
     startGamePopup.classList.add('close_popup')
@@ -36,6 +40,10 @@ function closePopup() {
     noAmmoPopup.classList.remove('open_popup')
 }
 
+
+/**
+ * This function defines when the game is over. It checks the health values of the players (height of div), and if this value is 100% it means that the player wins or loses
+ */
 function checkHealth() {
     let currentUserHealth = document.getElementById('user_health_bar').style.height;
     let currentCpuHealth = document.getElementById('cpu_health_bar').style.height;
@@ -59,7 +67,35 @@ function reloadAmmo() {
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText);
     document.getElementById('user_ammo').innerText = ++userAmmo;
 
+
+    ammoBlink();
+
     pushAnswer('reload');
+}
+
+/**
+ * This function creates the blinking effect in the ammo count with the symbol
+ */
+
+function ammoBlink() {
+    let ammoElement = document.getElementById('user_ammo_display');
+
+  ammoElement.style.color = 'red';
+
+  function toggleColor() {
+    if (ammoElement.style.color === 'red') {
+      ammoElement.style.color = 'white';
+    } else {
+      ammoElement.style.color = 'red';
+    }
+  }
+
+  var interval = setInterval(toggleColor, 500);
+
+  setTimeout(function () {
+    clearInterval(interval);
+    ammoElement.style.color = 'white';
+  }, 1000);
 }
 
 /**
@@ -125,6 +161,8 @@ function pushAnswer(userSelection) {
         document.getElementById('cpu_ammo').innerText = --cpuAmmo
     }
 
+
+
     checkAnswer(userResult, cpuResult);
 }
 
@@ -150,7 +188,7 @@ function checkAnswer(userResult, cpuResult) {
     } else if (userResult === 1 && cpuResult === 2) {
 
         console.log('gameOver');
-        currentUserHealth += 1;
+        currentUserHealth += 2;
         document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
 
         if (currentUserHealth > 3 && currentUserHealth < 7) {
@@ -163,7 +201,7 @@ function checkAnswer(userResult, cpuResult) {
     } else if (userResult === 2 && cpuResult === 1) {
 
         console.log('youWin');
-        currentCpuHealth += 1;
+        currentCpuHealth += 2;
         document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
         
         if (currentCpuHealth > 3 && currentCpuHealth < 7) {
@@ -191,7 +229,7 @@ function restartAmmo() {
 
 
 /**
- * This function restarts the duels won count and the ammo to 1 each
+ * This function restarts the health bars, the ammo to 1 and displays and is trigger play again button is pressed
  */
 function restartGame() {
     document.getElementById('user_health_bar').style.height = '0%';

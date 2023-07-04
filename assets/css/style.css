@@ -90,7 +90,8 @@ br {
     width: 40%;
 }
 
-.ammo_display {
+#cpu_ammo_display,
+#user_ammo_display {
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -98,19 +99,14 @@ br {
     align-items: center;
 }
 
-.ammo_image {
-    height: 20%;
-    width: 20%; 
-    background-color: black;
-    margin-bottom: 10px;
-}
-
-.ammo_display i {
+#user_ammo_display i,
+#cpu_ammo_display i {
     font-size: 400%;
     margin-bottom: 10px;
 }
 
-.ammo_display p {
+#user_ammo_display p,
+#cpu_ammo_display p {
     font-size: 2rem; 
 }
 
