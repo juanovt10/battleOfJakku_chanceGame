@@ -66,30 +66,21 @@ br {
     
 }
 
-.health_bar_full {
-    background-color: black;
+#cpu_health_bar_full,
+#user_health_bar_full {
+    background-color: green;
     height: 80%;
     width: 10%;
     border: 1px solid white;
 }
 
-#cpu_health_bar {
-    height: 0%; 
-    width: 100%;
-    background-color: white;
-    transition: all .5s ease;
-}
-
+#cpu_health_bar,
 #user_health_bar {
     height: 0%; 
     width: 100%;
     background-color: white;
     transition: all .5s ease;
 }
-
-/* #cpu_health_bar:: -webkit-progress-bar, {
-    background-color: white;
-} */
 
 .cpu_space_ship {
     width: 80%;
@@ -195,21 +186,3 @@ button img {
     background-color: yellow;
     color: black;
 }
-
-/* .no_ammo {
-    width: 400px; 
-    background-color: black;
-    border-radius: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 30px;
-    color: yellow;
-    visibility: hidden;
-}
-
-.open_popup {
-    visibility: visible;
-} */

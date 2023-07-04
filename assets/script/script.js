@@ -139,6 +139,7 @@ function checkAnswer(userResult, cpuResult) {
     let currentUserHealth = parseInt((document.getElementById('user_health_bar').style.height).slice(0,1));
     let currentCpuHealth = parseInt((document.getElementById('cpu_health_bar').style.height).slice(0,1));
     
+    
     if (userResult === 0 || cpuResult === 0) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 1) {
@@ -148,17 +149,25 @@ function checkAnswer(userResult, cpuResult) {
         console.log('gameOver');
         currentUserHealth += 1;
         document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
-        alert("XXXX has shoot you when you are reloading, he will keep tormenting XXXX town")
-        console.log(document.getElementById('user_health_bar').style.height)
+
+        if (currentUserHealth > 3 && currentUserHealth < 7) {
+            document.getElementById('user_health_bar_full').style.backgroundColor = 'yellow';
+        } else if (currentUserHealth > 7) {
+            document.getElementById('user_health_bar_full').style.backgroundColor = 'red';
+        } 
+
 
     } else if (userResult === 2 && cpuResult === 1) {
 
         console.log('youWin');
         currentCpuHealth += 1;
         document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
-        alert("Congratulations! You have beaten XXXX in the most epic standoff XXXX have seen!")
-        console.log(document.getElementById('cpu_health_bar').style.height)
         
+        if (currentCpuHealth > 3 && currentCpuHealth < 7) {
+            document.getElementById('cpu_health_bar_full').style.backgroundColor = 'yellow';
+        } else if (currentCpuHealth > 7) {
+            document.getElementById('cpu_health_bar_full').style.backgroundColor = 'red';
+        } 
 
     } else if (userResult === 2 && cpuResult === 2) {
         console.log('gameContinues');
@@ -190,6 +199,9 @@ function restartGame() {
 
     let losePopup = document.getElementById('cpu_win_popup'); 
     losePopup.classList.remove('open_popup');
+
+    document.getElementById('user_health_bar_full').style.backgroundColor = 'green';
+    document.getElementById('cpu_health_bar_full').style.backgroundColor = 'green';
 
     restartAmmo();
 }
