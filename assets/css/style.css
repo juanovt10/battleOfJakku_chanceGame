@@ -26,20 +26,10 @@ header {
     padding: 25px;
 }
 
-h1 {
-    margin-bottom: 5px; 
-    font-size: 1.5rem;
+h1, h2{
+    margin-bottom: 20px; 
+    /* font-size: 1.5rem; */
     text-align: center;
-}
-
-h2 {
-    font-size: 1rem;
-}
-
-p {
-    margin: 5px 50px;
-    font-size: 0.8rem;
-    text-align: left;
 }
 
 /* game area stylying */
@@ -164,6 +154,16 @@ button img {
 
 .close_popup {
     visibility: hidden;
+}
+
+.start_game ul {
+    list-style-type: none;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.start_game li {
+    margin-bottom: 10px;
 }
 
 .restart_game,
