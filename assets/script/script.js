@@ -13,8 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if ((this.getAttribute('data-type') === 'shoot')) {
                 checkHealth()
                 ammoCheck();
-            } else {
+            } else if (((this.getAttribute('data-type') === 'restart'))){
                 restartGame();
+            } else {
+                closePopup();
             }
         })
     }
@@ -25,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentCpuHealth = '0%'
     document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
 })
+
+function closePopup() {
+    let noAmmoPopup = document.getElementById('no_ammo_popup');
+    noAmmoPopup.classList.remove('open_popup')
+}
 
 function checkHealth() {
     let currentUserHealth = document.getElementById('user_health_bar').style.height;
@@ -58,12 +65,13 @@ function reloadAmmo() {
  */
 function ammoCheck() {
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText); 
-    
+    let noAmmoPopup = document.getElementById('no_ammo_popup');
+
     if (userAmmo != 0) {
         pushAnswer('shoot');
         document.getElementById('user_ammo').innerText = --userAmmo;
     } else {
-        alert(`You don't have any ammo! Reload to be able to shoot.`)
+        noAmmoPopup.classList.add('open_popup')
     }
 }
 

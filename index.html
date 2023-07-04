@@ -32,16 +32,25 @@
             <p id="cpu_ammo">1</p>
         </div>
     </div>
+
+    <div class="no_ammo" id="no_ammo_popup">
+        <h1>Ups!</h1>
+        <p>You do not have any ammo! Reload to shoot the enemy</p>
+        <button id="continue_game">I understand!</button>
+    </div>
+
     <div class="restart_game" id="user_win_popup">
         <h1>Congratulations!</h1>
         <p>You beat XXX in the most amazing intergalactic battle</p>
-        <button id="restart_game">Play Again</button>
+        <button id="restart_game" data-type="restart">Play Again</button>
     </div>
+
     <div class="restart_game" id="cpu_win_popup">
         <h1>You Lost!</h1>
         <p>XXX will keep tormenting the Galaxy!</p>
-        <button id="restart_game">Play Again</button>
+        <button id="restart_game" data-type="restart">Play Again</button>
     </div>
+
     <br>
     <div class="game_area" id="user_game_area">
         <div class="ammo_display">
