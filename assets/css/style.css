@@ -79,9 +79,14 @@ br {
     align-items: center;
 }
 
+.cpu_space_ship i {
+    width: 400px;
+    height: 400px;
+}
+
 .cpu_space_ship div {
     height: 80%;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     width: 40%;
 }
 
@@ -113,7 +118,7 @@ br {
 
 .user_space_ship div {
     height: 80%;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     width: 40%;
 }
 
@@ -164,6 +169,10 @@ button img {
 
 .start_game li {
     margin-bottom: 10px;
+}
+
+.start_game i {
+    font-size: 150%;
 }
 
 .restart_game,

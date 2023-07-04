@@ -17,13 +17,13 @@
     <div class="game_area" id="cpu_game_area">
         <div class="health_area">
             <div id="cpu_health_bar_full">
-                <!-- <progress id="cpu_health_bar" value="5" max="10"></progress> -->
                 <div id="cpu_health_bar"></div>
             </div>
         </div>
         <div class="cpu_space_ship">
-            <div></div>
-            <!-- <img src="assets/images/mostWanted_icon.png" alt="Enemy ship"> -->
+            <div>
+                <img src="assets/images/imperial_fighter_image.png" alt="Imperial ship">
+            </div>
         </div>
         <div class="ammo_display">
             <div class="ammo_image"></div>
@@ -38,9 +38,9 @@
         <p>Unfortunatly, imperial forces recognise this planet as rebel interest and left one single ship guarding the planet in case of rebel contact. Is up to you to defeat the imperial ship and collect the map from Jaku to save the Galaxy!</p>
         <h2>How to play:</h2>
         <ul>
-            <li>Evade the enemy to avoid recieving any damage</li>
-            <li>Reload to increase you ammo count on the left, but here you will be defensless in case of enemy attact</li>
-            <li>Shoot to damge the imperial ship shields</li>
+            <li>Evade the enemy to avoid recieving any damage <i class="fa-solid fa-shield"></i></li>
+            <li>Reload to increase you ammo count on the left, but here you will be defensless in case of enemy attact <i class="fa-solid fa-rotate"></i></li>
+            <li>Shoot to damge the imperial ship shields  <i class="fa-solid fa-meteor"></i></li>
         </ul>
         <button id="continue_game">Lets get that map!</button>
     </div>
@@ -71,11 +71,12 @@
             <p id="user_ammo">1</p>
         </div>
         <div class="user_space_ship">
-            <div></div>
+            <div>
+                <img src="assets/images/rebel_xwing_image.png" alt="X-wing">
+            </div>
         </div>
         <div class="health_area">
             <div id="user_health_bar_full">
-                <!-- <progress id="user_health_bar" value="6" max="10"></progress> -->
                 <div  id="user_health_bar"></div>
             </div>
         </div>
@@ -166,7 +167,7 @@
             <li>Wins who shoots the other when reloading</li>
         </ul>
     </footer> -->
-    
+    <script src="https://kit.fontawesome.com/3156a2e938.js" crossorigin="anonymous"></script>
     <script src="assets/script/script.js"></script>
 </body>
 </html>
