@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 function closePopup() {
+    let startGamePopup = document.getElementById('start_game_popup');
+    startGamePopup.classList.add('close_popup')
+
     let noAmmoPopup = document.getElementById('no_ammo_popup');
     noAmmoPopup.classList.remove('open_popup')
 }
@@ -194,14 +197,14 @@ function restartGame() {
     document.getElementById('user_health_bar').style.height = '0%';
     document.getElementById('cpu_health_bar').style.height = '0%';
 
+    document.getElementById('user_health_bar_full').style.backgroundColor = 'green';
+    document.getElementById('cpu_health_bar_full').style.backgroundColor = 'green';
+
     let winPopup = document.getElementById('user_win_popup'); 
     winPopup.classList.remove('open_popup');
 
     let losePopup = document.getElementById('cpu_win_popup'); 
     losePopup.classList.remove('open_popup');
-
-    document.getElementById('user_health_bar_full').style.backgroundColor = 'green';
-    document.getElementById('cpu_health_bar_full').style.backgroundColor = 'green';
 
     restartAmmo();
 }
