@@ -73,12 +73,22 @@ br {
     border: 1px solid white;
 }
 
-#cpu_health_bar,
-#user_health_bar {
+#cpu_health_bar {
     height: 0%; 
     width: 100%;
     background-color: white;
 }
+
+#user_health_bar {
+    height: 0%; 
+    width: 100%;
+    background-color: white;
+    /* transform: rotate(90deg); */
+}
+
+/* #cpu_health_bar:: -webkit-progress-bar, {
+    background-color: white;
+} */
 
 .cpu_space_ship {
     width: 80%;

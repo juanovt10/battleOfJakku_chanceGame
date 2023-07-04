@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
+
+    let currentUserHealth = '0%'
+    document.getElementById('user_health_bar').style.height = currentUserHealth;
+
+    let currentCpuHealth = '0%'
+    document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
 })
 
 /**
@@ -101,40 +107,11 @@ function pushAnswer(userSelection) {
  */
 
 
-let userHealth = document.getElementById('user_health_bar').style.height;
-let cpuHealth = document.getElementById('cpu_health_bar').style.height;
-
-if (userHealth.length === 3) {
-    userHealth = userHealth.slice(3);
-} else {
-    userHealth = userHealth.slice(2);
-}
-
-if (cpuHealth.length === 3) {
-    cpuHealth = userHealth.slice(3);
-} else {
-    cpuHealth = userHealth.slice(2);
-}
-
-let healthStatus = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// let status = '';
-
-for (currentStatus of healthStatus) {
-    if (currentStatus == healthStatus) {
-        currentStatus = --currentStatus
-    } 
-}
-
-
-
 function checkAnswer(userResult, cpuResult) {
 
-    let userScore = document.getElementById('user_health_bar');
-    let cpuScore = document.getElementById("cpu_health_bar");
+    let currentUserHealth = parseInt((document.getElementById('user_health_bar').style.height).slice(0,1));
+    let currentCpuHealth = parseInt((document.getElementById('cpu_health_bar').style.height).slice(0,1));
     
-    console.log(userScore.style);
-    console.log(cpuScore.style);
-
     if (userResult === 0 || cpuResult === 0) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 1) {
@@ -143,7 +120,9 @@ function checkAnswer(userResult, cpuResult) {
 
         console.log('gameOver');
         restartAmmo();
-        document.getElementById('user_health_bar').style.height = '90%';
+        currentUserHealth += 1;
+        console.log(currentUserHealth);
+        document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
         alert("XXXX has shoot you when you are reloading, he will keep tormenting XXXX town")
         
 
@@ -151,7 +130,9 @@ function checkAnswer(userResult, cpuResult) {
 
         console.log('youWin');
         restartAmmo();
-        document.getElementById('cpu_health_bar').style.height = '90%';
+        currentCpuHealth += 1;
+        console.log(currentCpuHealth);
+        document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
         alert("Congratulations! You have beaten XXXX in the most epic standoff XXXX have seen!")
         
 
