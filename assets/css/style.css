@@ -77,13 +77,14 @@ br {
     height: 0%; 
     width: 100%;
     background-color: white;
+    transition: all .5s ease;
 }
 
 #user_health_bar {
     height: 0%; 
     width: 100%;
     background-color: white;
-    /* transform: rotate(90deg); */
+    transition: all .5s ease;
 }
 
 /* #cpu_health_bar:: -webkit-progress-bar, {

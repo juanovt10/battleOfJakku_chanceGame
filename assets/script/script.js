@@ -1,13 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
     let buttons = document.getElementsByTagName('button');
 
     for (let button of buttons) {
         button.addEventListener('click', function() {
             if (this.getAttribute('data-type') === 'cover') {
+                checkHealth()
                 pushAnswer('cover');
             } else if (this.getAttribute('data-type') === 'reload') {
+                checkHealth()
                 reloadAmmo(); 
             } else if ((this.getAttribute('data-type') === 'shoot')) {
+                checkHealth()
                 ammoCheck();
             } else {
                 restartGame();
@@ -21,6 +25,19 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentCpuHealth = '0%'
     document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
 })
+
+function checkHealth() {
+    let currentUserHealth = document.getElementById('user_health_bar').style.height;
+    let currentCpuHealth = document.getElementById('cpu_health_bar').style.height;
+
+    if (currentUserHealth === '100%') {
+        alert('YOU LOST');
+        restartGame();
+    } else if (currentCpuHealth === '100%') {
+        alert('YOU WON');
+        restartGame();
+    }
+}
 
 /**
  * This function will add 1 to the ammo count and trigger the pushAnswer function that will put the 
@@ -119,26 +136,26 @@ function checkAnswer(userResult, cpuResult) {
     } else if (userResult === 1 && cpuResult === 2) {
 
         console.log('gameOver');
-        restartAmmo();
         currentUserHealth += 1;
-        console.log(currentUserHealth);
         document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
         alert("XXXX has shoot you when you are reloading, he will keep tormenting XXXX town")
-        
+        console.log(document.getElementById('user_health_bar').style.height)
 
     } else if (userResult === 2 && cpuResult === 1) {
 
         console.log('youWin');
-        restartAmmo();
         currentCpuHealth += 1;
-        console.log(currentCpuHealth);
         document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
         alert("Congratulations! You have beaten XXXX in the most epic standoff XXXX have seen!")
+        console.log(document.getElementById('cpu_health_bar').style.height)
         
 
     } else if (userResult === 2 && cpuResult === 2) {
         console.log('gameContinues');
     }
+
+    checkHealth(currentUserHealth, currentCpuHealth);
+    checkHealth(currentUserHealth, currentCpuHealth);
 }
 
 
@@ -155,8 +172,8 @@ function restartAmmo() {
  * This function restarts the duels won count and the ammo to 1 each
  */
 function restartGame() {
-    document.getElementById('user_score').innerText = 0;
-    document.getElementById('cpu_score').innerText = 0;
+    document.getElementById('user_health_bar').style.height = '0%';
+    document.getElementById('cpu_health_bar').style.height = '0%';
 
     restartAmmo();
 }
