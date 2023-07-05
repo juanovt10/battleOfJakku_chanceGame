@@ -69,8 +69,12 @@ function checkHealth() {
  */
 function reloadAmmo() {
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText);
+    let shootBtn = document.getElementById('selection_shoot');
+
     document.getElementById('user_ammo').innerText = ++userAmmo;
     
+    shootBtn.classList.remove('shoot_lock');
+
     ammoBlink('user_ammo_display');
 
     pushAnswer('reload');
@@ -110,7 +114,7 @@ function ammoCheck() {
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText); 
     let noAmmoPopup = document.getElementById('no_ammo_popup');
     let ammoDisplay = document.getElementById('user_ammo_display');
-
+    let shootBtn = document.getElementById('selection_shoot');
 
     if (userAmmo != 0) {
         pushAnswer('shoot');
@@ -118,6 +122,8 @@ function ammoCheck() {
     } else {
         noAmmoPopup.classList.add('open_popup')
         ammoDisplay.style.color = 'red';
+        shootBtn.classList.add('shoot_lock');
+        // shootBtn.classList.remove('shoot_lock:hover');
     }
 }
 
