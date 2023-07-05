@@ -70,7 +70,7 @@ function reloadAmmo() {
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText);
     document.getElementById('user_ammo').innerText = ++userAmmo;
     
-    ammoBlink();
+    ammoBlink('user_ammo_display');
 
     pushAnswer('reload');
 }
@@ -79,9 +79,9 @@ function reloadAmmo() {
  * This function creates the blinking effect in the ammo count with the symbol
  */
 
-function ammoBlink() {
+function ammoBlink(ammoId) {
     
-    let ammoElement = document.getElementById('user_ammo_display');
+    let ammoElement = document.getElementById(ammoId);
 
     ammoElement.style.color = 'green';
 
@@ -155,35 +155,14 @@ function pushAnswer(userSelection) {
         // cover();
     } else if (cpuResult === 1) {
         document.getElementById('cpu_ammo').innerText = ++cpuAmmo;
-        cpu_reload();
+        ammoBlink('cpu_ammo_display');
+        // cpu_reload();
     } else if (cpuResult === 2) {
         document.getElementById('cpu_ammo').innerText = --cpuAmmo
     }
 
     checkAnswer(userResult, cpuResult);
 }
-
-function cpu_reload() {
-    let ammoElement = document.getElementById('cpu_ammo_display');
-
-    ammoElement.style.color = 'green';
-
-    function toggleColor() {
-        if (ammoElement.style.color === 'green') {
-            ammoElement.style.color = 'white';
-        } else {
-            ammoElement.style.color = 'green';
-        }
-    }
-
-    var interval = setInterval(toggleColor, 200);
-
-    setTimeout(function () {
-        clearInterval(interval);
-        ammoElement.style.color = 'white';
-    }, 400);
-}
-
 
 /**
  * This function checks the results of both the cpu and the user, and assesses the outcome. 
@@ -205,7 +184,7 @@ function checkAnswer(userResult, cpuResult) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 2) {
 
-        userDamage();
+        userDamage('user_health_bar_full');
         console.log('gameOver');
         currentUserHealth += 2;
         document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
@@ -219,7 +198,7 @@ function checkAnswer(userResult, cpuResult) {
 
     } else if (userResult === 2 && cpuResult === 1) {
 
-        cpuDamage();
+        userDamage('cpu_health_bar_full');
         console.log('youWin');
         currentCpuHealth += 2;
         document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
@@ -237,8 +216,8 @@ function checkAnswer(userResult, cpuResult) {
     checkHealth(currentUserHealth, currentCpuHealth);
 }
 
-function userDamage() {
-    let healthBar = document.getElementById('user_health_bar_full');
+function userDamage(healthId) {
+    let healthBar = document.getElementById(healthId);
 
     healthBar.style.border = '1px outset red';
 
@@ -257,29 +236,6 @@ function userDamage() {
         healthBar.style.border = '1px solid white';
     }, 400);
 }
-
-function cpuDamage() {
-    let healthBar = document.getElementById('cpu_health_bar_full');
-
-    healthBar.style.border = '1px outset red';
-
-    function toggleColor() {
-        if (healthBar.style.border === '2px outset red') {
-            healthBar.style.border = '1px inset white';
-        } else {
-            healthBar.style.border = '2px outset red';
-        }
-    }
-
-    var interval = setInterval(toggleColor, 200);
-
-    setTimeout(function () {
-        clearInterval(interval);
-        healthBar.style.border = '1px solid white';
-    }, 400);
-}
-
-
 
 /**
  * This function restarts the ammo of both the user and cpu after, winning, losing or restarting
