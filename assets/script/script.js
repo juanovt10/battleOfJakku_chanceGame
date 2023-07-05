@@ -167,13 +167,13 @@ function pushAnswer(userSelection) {
 function cover(coverId) {
     let healthCover = document.getElementById(coverId);
 
-    healthCover.style.boxShadow = '0 0 20px 20px yellow';
-
+    healthCover.style.backgroundColor = 'blue'; 
+    
     function toggleColor() {
-        if (healthCover.style.boxShadow === '0 0 20px 20px blue') {
-            healthCover.style.boxShadow = '0 0 20px 20px yellow';
+        if (healthCover.style.backgroundColor === 'blue') {
+            healthCover.style.backgroundColor = 'black';
         } else {
-            healthCover.style.boxShadow = '0 0 20px 20px blue';
+            healthCover.style.backgroundColor = 'blue';
         }
     }
 
@@ -181,8 +181,27 @@ function cover(coverId) {
 
     setTimeout(function () {
         clearInterval(interval);
-        healthCover.style.boxShadow = '0 0 20px 20px blue';
+        healthCover.style.backgroundColor = 'black';
     }, 400);
+
+    // let healthCover = document.getElementById(coverId);
+
+    // healthCover.style.boxShadow = '0 0 20px 20px yellow';
+
+    // function toggleColor() {
+    //     if (healthCover.style.boxShadow === '0 0 20px 20px blue') {
+    //         healthCover.style.boxShadow = '0 0 20px 20px yellow';
+    //     } else {
+    //         healthCover.style.boxShadow = '0 0 20px 20px blue';
+    //     }
+    // }
+
+    // var interval = setInterval(toggleColor, 200);
+
+    // setTimeout(function () {
+    //     clearInterval(interval);
+    //     healthCover.style.boxShadow = '0 0 20px 20px blue';
+    // }, 400);
 }
 
 /**
@@ -211,9 +230,9 @@ function checkAnswer(userResult, cpuResult) {
         document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
 
         if (currentUserHealth > 3 && currentUserHealth < 7) {
-            document.getElementById('user_health_bar_full').style.backgroundColor = 'yellow';
+            document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px yellow';
         } else if (currentUserHealth > 7) {
-            document.getElementById('user_health_bar_full').style.backgroundColor = 'red';
+            document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px red';
         } 
 
 
@@ -225,9 +244,9 @@ function checkAnswer(userResult, cpuResult) {
         document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
         
         if (currentCpuHealth > 3 && currentCpuHealth < 7) {
-            document.getElementById('cpu_health_bar_full').style.backgroundColor = 'yellow';
+            document.getElementById('cpu_health_bar_full').style.boxShadow = '0 0 20px 20px yellow';
         } else if (currentCpuHealth > 7) {
-            document.getElementById('cpu_health_bar_full').style.backgroundColor = 'red';
+            document.getElementById('cpu_health_bar_full').style.boxShadow = '0 0 20px 20px red';
         } 
 
     } else if (userResult === 2 && cpuResult === 2) {
@@ -274,8 +293,11 @@ function restartGame() {
     document.getElementById('user_health_bar').style.height = '0%';
     document.getElementById('cpu_health_bar').style.height = '0%';
 
-    document.getElementById('user_health_bar_full').style.backgroundColor = 'green';
-    document.getElementById('cpu_health_bar_full').style.backgroundColor = 'green';
+    document.getElementById('user_health_bar_full').style.backgroundColor = 'black';
+    document.getElementById('cpu_health_bar_full').style.backgroundColor = 'black';
+
+    document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px green';
+    document.getElementById('cpu_health_bar_full').style.boxShadow = '0 0 20px 20px green';
 
     let winPopup = document.getElementById('user_win_popup'); 
     winPopup.classList.remove('open_popup');

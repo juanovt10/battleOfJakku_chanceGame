@@ -61,16 +61,12 @@ br {
 
 #cpu_health_bar_full,
 #user_health_bar_full {
-    background-color: green;
+    background-color: black;
     height: 80%;
     width: 10%;
     border: 1px solid white;
     transition: all .4s ease;
-    box-shadow: 0 0 20px 20px blue;
-}
-
-.health_bar_cover {
-    box-shadow: 0 0 20px 20px blue;
+    box-shadow: 0 0 20px 20px green;
 }
 
 #cpu_health_bar,
@@ -90,17 +86,6 @@ br {
     align-items: center;
 }
 
-.cpu_space_ship i {
-    width: 400px;
-    height: 400px;
-}
-
-.cpu_space_ship div {
-    height: 80%;
-    /* background-color: lightblue; */
-    width: 40%;
-}
-
 .user_space_ship {
     width: 80%;
     display: flex;
@@ -108,10 +93,13 @@ br {
     align-items: center;
 }
 
-.user_space_ship div {
+.user_space_ship div,
+.cpu_space_ship div {
     height: 80%;
-    /* background-color: lightblue; */
     width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* AMMO - DISPLAY - STYLYING */
