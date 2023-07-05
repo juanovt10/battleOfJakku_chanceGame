@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.getAttribute('data-type') === 'cover') {
                 checkHealth()
                 pushAnswer('cover');
+                cover('user_health_bar_full');
             } else if (this.getAttribute('data-type') === 'reload') {
                 checkHealth()
                 reloadAmmo(); 
@@ -152,16 +153,36 @@ function pushAnswer(userSelection) {
     console.log(cpuResult)
 
     if (cpuResult === 0) { 
-        // cover();
+        cover('cpu_health_bar_full');
     } else if (cpuResult === 1) {
         document.getElementById('cpu_ammo').innerText = ++cpuAmmo;
         ammoBlink('cpu_ammo_display');
-        // cpu_reload();
     } else if (cpuResult === 2) {
         document.getElementById('cpu_ammo').innerText = --cpuAmmo
     }
 
     checkAnswer(userResult, cpuResult);
+}
+
+function cover(coverId) {
+    let healthCover = document.getElementById(coverId);
+
+    healthCover.style.boxShadow = '0 0 20px 20px yellow';
+
+    function toggleColor() {
+        if (healthCover.style.boxShadow === '0 0 20px 20px blue') {
+            healthCover.style.boxShadow = '0 0 20px 20px yellow';
+        } else {
+            healthCover.style.boxShadow = '0 0 20px 20px blue';
+        }
+    }
+
+    var interval = setInterval(toggleColor, 200);
+
+    setTimeout(function () {
+        clearInterval(interval);
+        healthCover.style.boxShadow = '0 0 20px 20px blue';
+    }, 400);
 }
 
 /**
