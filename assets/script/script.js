@@ -38,6 +38,9 @@ function closePopup() {
 
     let noAmmoPopup = document.getElementById('no_ammo_popup');
     noAmmoPopup.classList.remove('open_popup')
+    
+    let ammoDisplay = document.getElementById('user_ammo_display');
+    ammoDisplay.style.color = 'white';
 }
 
 
@@ -79,23 +82,24 @@ function reloadAmmo() {
 
 function ammoBlink() {
     let ammoElement = document.getElementById('user_ammo_display');
+    
 
-  ammoElement.style.color = 'red';
+  ammoElement.style.color = 'green';
 
   function toggleColor() {
-    if (ammoElement.style.color === 'red') {
+    if (ammoElement.style.color === 'green') {
       ammoElement.style.color = 'white';
     } else {
-      ammoElement.style.color = 'red';
+      ammoElement.style.color = 'green';
     }
   }
 
-  var interval = setInterval(toggleColor, 500);
+  var interval = setInterval(toggleColor, 200);
 
   setTimeout(function () {
     clearInterval(interval);
     ammoElement.style.color = 'white';
-  }, 1000);
+  }, 400);
 }
 
 /**
@@ -105,12 +109,15 @@ function ammoBlink() {
 function ammoCheck() {
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText); 
     let noAmmoPopup = document.getElementById('no_ammo_popup');
+    let ammoDisplay = document.getElementById('user_ammo_display');
+
 
     if (userAmmo != 0) {
         pushAnswer('shoot');
         document.getElementById('user_ammo').innerText = --userAmmo;
     } else {
         noAmmoPopup.classList.add('open_popup')
+        ammoDisplay.style.color = 'red';
     }
 }
 

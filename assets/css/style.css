@@ -47,6 +47,9 @@ br {
     border-bottom: 5px ridge white;
 }
 
+
+/* HEALTH - BAR - STYLYING */
+
 .health_area {
     width: 20%;
     display: flex;
@@ -72,6 +75,8 @@ br {
     transition: all .5s ease;
 }
 
+/* AVATAR - STYLYING */
+
 .cpu_space_ship {
     width: 80%;
     display: flex;
@@ -90,6 +95,21 @@ br {
     width: 40%;
 }
 
+.user_space_ship {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_space_ship div {
+    height: 80%;
+    /* background-color: lightblue; */
+    width: 40%;
+}
+
+/* AMMO - DISPLAY - STYLYING */
+
 #cpu_ammo_display,
 #user_ammo_display {
     width: 20%;
@@ -97,6 +117,8 @@ br {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scale: 1;
+    transition: all .4s ease;
 }
 
 #user_ammo_display i,
@@ -110,18 +132,7 @@ br {
     font-size: 2rem; 
 }
 
-.user_space_ship {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user_space_ship div {
-    height: 80%;
-    /* background-color: lightblue; */
-    width: 40%;
-}
+/* GAME - BUTTONS - STYLYING */
 
 footer {
     height: 10vh;
@@ -139,10 +150,8 @@ footer button {
     background-color: black;
 }
 
-button img {
-    width: 100%;
-    height: 100%;
-}
+
+/* POPUS - STYLYING */
 
 .start_game {
     width: 400px; 
