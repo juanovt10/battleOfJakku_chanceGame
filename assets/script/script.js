@@ -69,8 +69,7 @@ function checkHealth() {
 function reloadAmmo() {
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText);
     document.getElementById('user_ammo').innerText = ++userAmmo;
-
-
+    
     ammoBlink();
 
     pushAnswer('reload');
@@ -81,25 +80,25 @@ function reloadAmmo() {
  */
 
 function ammoBlink() {
-    let ammoElement = document.getElementById('user_ammo_display');
     
+    let ammoElement = document.getElementById('user_ammo_display');
 
-  ammoElement.style.color = 'green';
+    ammoElement.style.color = 'green';
 
-  function toggleColor() {
-    if (ammoElement.style.color === 'green') {
-      ammoElement.style.color = 'white';
-    } else {
-      ammoElement.style.color = 'green';
+    function toggleColor() {
+        if (ammoElement.style.color === 'green') {
+        ammoElement.style.color = 'white';
+        } else {
+        ammoElement.style.color = 'green';
+        }
     }
-  }
 
-  var interval = setInterval(toggleColor, 200);
+    var interval = setInterval(toggleColor, 200);
 
-  setTimeout(function () {
-    clearInterval(interval);
-    ammoElement.style.color = 'white';
-  }, 400);
+    setTimeout(function () {
+        clearInterval(interval);
+        ammoElement.style.color = 'white';
+    }, 400);
 }
 
 /**
@@ -132,18 +131,12 @@ function pushAnswer(userSelection) {
     let userSelectionArea = document.getElementById('user_selection_decision');
 
     if (userSelection === 'cover') {
-
-        // userSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Sheriff icon">';
         userResult = 0;
     } else if (userSelection === 'reload') {
-        // userSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
         userResult = 1;
     } else if (userSelection === 'shoot') {
-        // userSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
         userResult = 2;
     }
-    
-    console.log(userResult);
 
     let userAmmo = parseInt(document.getElementById('user_ammo').innerText); 
     let cpuAmmo = parseInt(document.getElementById('cpu_ammo').innerText);
@@ -159,18 +152,36 @@ function pushAnswer(userSelection) {
     console.log(cpuResult)
 
     if (cpuResult === 0) { 
-        // cpuSelectionArea.innerHTML = '<img src="assets/images/cover_icon.png" alt="Cover icon">';
+        // cover();
     } else if (cpuResult === 1) {
         document.getElementById('cpu_ammo').innerText = ++cpuAmmo;
-        // cpuSelectionArea.innerHTML = '<img src="assets/images/reload_icon.png" alt="Reload icon">';
+        cpu_reload();
     } else if (cpuResult === 2) {
-        // cpuSelectionArea.innerHTML = '<img src="assets/images/shoot_icon.png" alt="Shoot icon">';
         document.getElementById('cpu_ammo').innerText = --cpuAmmo
     }
 
-
-
     checkAnswer(userResult, cpuResult);
+}
+
+function cpu_reload() {
+    let ammoElement = document.getElementById('cpu_ammo_display');
+
+    ammoElement.style.color = 'green';
+
+    function toggleColor() {
+        if (ammoElement.style.color === 'green') {
+            ammoElement.style.color = 'white';
+        } else {
+            ammoElement.style.color = 'green';
+        }
+    }
+
+    var interval = setInterval(toggleColor, 200);
+
+    setTimeout(function () {
+        clearInterval(interval);
+        ammoElement.style.color = 'white';
+    }, 400);
 }
 
 
@@ -194,6 +205,7 @@ function checkAnswer(userResult, cpuResult) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 2) {
 
+        userDamage();
         console.log('gameOver');
         currentUserHealth += 2;
         document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
@@ -207,6 +219,7 @@ function checkAnswer(userResult, cpuResult) {
 
     } else if (userResult === 2 && cpuResult === 1) {
 
+        cpuDamage();
         console.log('youWin');
         currentCpuHealth += 2;
         document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
@@ -222,8 +235,50 @@ function checkAnswer(userResult, cpuResult) {
     }
 
     checkHealth(currentUserHealth, currentCpuHealth);
-    checkHealth(currentUserHealth, currentCpuHealth);
 }
+
+function userDamage() {
+    let healthBar = document.getElementById('user_health_bar_full');
+
+    healthBar.style.border = '1px outset red';
+
+    function toggleColor() {
+        if (healthBar.style.border === '2px outset red') {
+            healthBar.style.border = '1px inset white';
+        } else {
+            healthBar.style.border = '2px outset red';
+        }
+    }
+
+    var interval = setInterval(toggleColor, 200);
+
+    setTimeout(function () {
+        clearInterval(interval);
+        healthBar.style.border = '1px solid white';
+    }, 400);
+}
+
+function cpuDamage() {
+    let healthBar = document.getElementById('cpu_health_bar_full');
+
+    healthBar.style.border = '1px outset red';
+
+    function toggleColor() {
+        if (healthBar.style.border === '2px outset red') {
+            healthBar.style.border = '1px inset white';
+        } else {
+            healthBar.style.border = '2px outset red';
+        }
+    }
+
+    var interval = setInterval(toggleColor, 200);
+
+    setTimeout(function () {
+        clearInterval(interval);
+        healthBar.style.border = '1px solid white';
+    }, 400);
+}
+
 
 
 /**

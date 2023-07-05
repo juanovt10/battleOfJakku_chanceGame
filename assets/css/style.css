@@ -65,6 +65,8 @@ br {
     height: 80%;
     width: 10%;
     border: 1px solid white;
+    transition: all .4s ease;
+    /* border-color: white; */
 }
 
 #cpu_health_bar,
