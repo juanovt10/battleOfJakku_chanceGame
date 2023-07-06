@@ -8,16 +8,13 @@
 
 body {
     font-family: 'Cantora One', sans-serif;
+    min-height: 100vh;
     color:  white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(../images/space_background_image.jpg);
-}
-
-p {
-    margin-bottom: 20px;
 }
 
 /* heading styling */
@@ -28,8 +25,13 @@ header {
     padding: 25px;
 }
 
-h1, h2{
-    margin-bottom: 20px; 
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -63,7 +65,7 @@ br {
 #user_health_bar_full {
     background-color: black;
     height: 80%;
-    width: 10%;
+    width: 10px;
     border: 1px solid white;
     transition: all .4s ease;
     box-shadow: 0 0 20px 20px green;
@@ -134,7 +136,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     flex-shrink: 0;
 }
 
@@ -145,6 +147,7 @@ footer button {
     /* padding-top: 20px;
     padding-bottom: 20px; */
     background-color: rgba(177,239,6, 0.8);
+    border: 1px solid blue;
 }
 
 
@@ -228,16 +231,11 @@ footer button {
     visibility: visible;
 }
 
-.restart_game h1,
-.no_ammo h1,
-.start_game h1 {
-    margin-bottom: 20px;
-}
-
 .restart_game button,
 .no_ammo button,
 .start_game button {
     font-family: 'Cantora One', sans-serif;
+    margin-top: 20px;
     width: 50%;
     font-size: 1.2rem;
     padding: 10px;
@@ -259,11 +257,12 @@ footer button {
     }
     #cpu_health_bar_full,
     #user_health_bar_full {
-        height: 5px;
+        height: 10px;
         width: 80%;
     }
     .cpu_space_ship {
         order: 2;
+        height: auto;
     }
     .restart_game, 
     .no_ammo,
@@ -271,11 +270,21 @@ footer button {
         width: 80%;
         padding: 20px;
     }
+    footer {
+        width: 80%;
+        height: 5vh;
+    }
+    .user_controls i {
+        font-size: 250%;
+    }
 }
 
 @media (max-width: 650px) {
     header {
         padding: 5px;
+    }
+    h1 {
+        margin-bottom: 0;
     }
 
     img,
@@ -284,14 +293,47 @@ footer button {
         transform: scale(0.7);
     }
     p {
-        transform: scale(0.7);
+        transform: scale(0.9);
     }
+    .restart_game button,
+    .no_ammo button,
+    .start_game button {
+        width: 90%;
+    }
+    
 } 
 
-@media (max-width: 450px) {
+@media (max-width: 350px), (max-height: 700px) {
+    h1, h2 {
+        transform: scale(0.9);
+    }
+    p {
+        transform: scale(0.8);
+    }
+    .game_area {
+        height: auto;
+        min-height: 20vh;
+    }
     img,
     #cpu_ammo_display,
     #user_ammo_display {
         transform: scale(0.5);
+    }
+    #cpu_health_bar_full,
+    #user_health_bar_full {
+        height: 5px;
+    }
+    .user_controls i {
+        font-size: 150%;
+    }
+    
+
+}
+
+@media (max-height: 500px) {
+    .start_game, 
+    .restart_game,
+    .no_ammo {
+        top: 80%;
     }
 }

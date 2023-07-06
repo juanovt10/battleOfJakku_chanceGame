@@ -189,25 +189,6 @@ function cover(coverId) {
         clearInterval(interval);
         healthCover.style.backgroundColor = 'black';
     }, 400);
-
-    // let healthCover = document.getElementById(coverId);
-
-    // healthCover.style.boxShadow = '0 0 20px 20px yellow';
-
-    // function toggleColor() {
-    //     if (healthCover.style.boxShadow === '0 0 20px 20px blue') {
-    //         healthCover.style.boxShadow = '0 0 20px 20px yellow';
-    //     } else {
-    //         healthCover.style.boxShadow = '0 0 20px 20px blue';
-    //     }
-    // }
-
-    // var interval = setInterval(toggleColor, 200);
-
-    // setTimeout(function () {
-    //     clearInterval(interval);
-    //     healthCover.style.boxShadow = '0 0 20px 20px blue';
-    // }, 400);
 }
 
 /**
