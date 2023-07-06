@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
     }
+    
+
 
     let currentUserHealth = '0%'
     document.getElementById('user_health_bar').style.height = currentUserHealth;
@@ -198,19 +200,19 @@ function cover(coverId) {
  * - The one that shoots when the other is reloading, wins and increased the duels won record.
  */
 
-
 function checkAnswer(userResult, cpuResult) {
-
+    
     let currentUserHealth = parseInt((document.getElementById('user_health_bar').style.height).slice(0,1));
     let currentCpuHealth = parseInt((document.getElementById('cpu_health_bar').style.height).slice(0,1));
-    
     
     if (userResult === 0 || cpuResult === 0) {
         console.log('gameContinues');
     } else if (userResult === 1 && cpuResult === 1) {
         console.log('gameContinues');
+
     } else if (userResult === 1 && cpuResult === 2) {
 
+        
         userDamage('user_health_bar_full');
         console.log('gameOver');
         currentUserHealth += 2;
@@ -221,7 +223,6 @@ function checkAnswer(userResult, cpuResult) {
         } else if (currentUserHealth > 7) {
             document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px red';
         } 
-
 
     } else if (userResult === 2 && cpuResult === 1) {
 
@@ -240,7 +241,7 @@ function checkAnswer(userResult, cpuResult) {
         console.log('gameContinues');
     }
 
-    checkHealth(currentUserHealth, currentCpuHealth);
+    checkHealth();
 }
 
 function userDamage(healthId) {
@@ -279,9 +280,6 @@ function restartAmmo() {
 function restartGame() {
     document.getElementById('user_health_bar').style.height = '0%';
     document.getElementById('cpu_health_bar').style.height = '0%';
-
-    document.getElementById('user_health_bar_full').style.backgroundColor = 'black';
-    document.getElementById('cpu_health_bar_full').style.backgroundColor = 'black';
 
     document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px green';
     document.getElementById('cpu_health_bar_full').style.boxShadow = '0 0 20px 20px green';
