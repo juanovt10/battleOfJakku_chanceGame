@@ -27,12 +27,17 @@ header {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h2 {
     margin-top: 20px;
     text-align: center;
+}
+
+p {
+    font-size: 110%;
+    margin-top: 10px;
 }
 
 /* game area stylying */
@@ -179,40 +184,7 @@ footer button {
 
 /* POPUS - STYLYING */
 
-.start_game {
-    width: 400px; 
-    background-color: black;
-    border-radius: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 30px;
-    color: white;
-    visibility: visible;
-    z-index: 1000;
-    box-shadow: 0 0 20px 20px white;
-}
-
-.close_popup {
-    visibility: hidden;
-}
-
-.start_game ul {
-    list-style-type: none;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.start_game li {
-    margin-bottom: 10px;
-}
-
-.start_game i {
-    font-size: 150%;
-}
-
+.start_game,
 .restart_game,
 .no_ammo {
     width: 400px; 
@@ -225,12 +197,36 @@ footer button {
     text-align: center;
     padding: 30px;
     color: white;
-    visibility: hidden;
     z-index: 1000;
+    box-shadow: 0 0 20px 20px white;
 }
 
+.start_game {
+    visibility: visible;
+}
+
+.restart_game,
 .no_ammo {
-    box-shadow: 0 0 20px 20px red;
+    visibility: hidden;
+}
+
+.close_popup {
+    visibility: hidden;
+}
+
+.start_game ul {
+    list-style-type: none;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.start_game li {
+    margin-bottom: 10px;
+}
+
+.start_game i {
+    font-size: 150%;
 }
 
 #cpu_win_popup {
@@ -257,9 +253,26 @@ footer button {
     color: black;
 }
 
+.continue_game:hover {
+    box-shadow: 0 0 5px 5px white;
+    background-color: black;
+    color: white;
+}
+
+.restart_game_lose:hover {
+    box-shadow: 0 0 5px 5px red;
+    background-color: black;
+    color: white;
+}
+
+.restart_game_win:hover {
+    box-shadow: 0 0 5px 5px blue;
+    background-color: black;
+    color: white;
+}
+
 .user_controls i {
     font-size: 500%;
-    /* color: white; */
 }
 
 @media (max-width: 768px) {
