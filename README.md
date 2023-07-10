@@ -92,8 +92,13 @@ To enrich the static game experience, visual feedback is employed to provide use
 
 - When the user emerges victorious, a popup with a blue shadow appears, congratulating them with a brief story conclusion and an option to play again. In the event of the bot's victory, a different popup with a red shadow appears, indicating the user's defeat and providing the option to play again.
 
-Testing
+## Testing
+
+The most challenging areas where css and js. For the css the best solutin was 100vh for body and auto for the game areas. For the js issue I used the timestuff. This was applied to all blinking functions 
 
 ```
 code
 ```
+
+### Validator testing
+- 
