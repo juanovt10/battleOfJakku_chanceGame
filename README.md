@@ -193,7 +193,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 - On the left hand side menu, navigate to the pages tab user code and automation.
 - In build and deplyment, under branch, select the main Branch
 - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-- The live link can be found [here - The Battle of Jakku]().
+- The live link can be found [here - The Battle of Jakku](https://juanovt10.github.io/battleOfJakku_chanceGame/).
 
 ## Credits 
 
