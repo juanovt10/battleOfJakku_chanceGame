@@ -260,7 +260,11 @@ footer button {
         height: 10px;
         width: 80%;
     }
-
+    #cpu_health_bar,
+    #user_health_bar {
+    height: 100%; 
+    width: 0%;
+    }
     .cpu_space_ship {
         order: 2;
         height: auto;

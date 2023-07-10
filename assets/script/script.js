@@ -22,13 +22,23 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
     
-
-
     let currentUserHealth = '0%'
-    document.getElementById('user_health_bar').style.height = currentUserHealth;
-
     let currentCpuHealth = '0%'
-    document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
+    
+    if (window.innerWidth > 768) {
+        document.getElementById('user_health_bar').style.height = currentUserHealth;
+        document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
+    } else {
+        document.getElementById('user_health_bar').style.width = currentUserHealth;
+        document.getElementById('cpu_health_bar').style.width = currentCpuHealth;
+    }
+
+
+    // let currentUserHealth = '0%'
+    // document.getElementById('user_health_bar').style.height = currentUserHealth;
+
+    // let currentCpuHealth = '0%'
+    // document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
 })
 
 /**
@@ -201,7 +211,7 @@ function cover(coverId) {
  */
 
 function checkAnswer(userResult, cpuResult) {
-    
+
     let currentUserHealth = parseInt((document.getElementById('user_health_bar').style.height).slice(0,1));
     let currentCpuHealth = parseInt((document.getElementById('cpu_health_bar').style.height).slice(0,1));
     
