@@ -180,6 +180,9 @@ function pushAnswer(userSelection) {
     checkAnswer(userResult, cpuResult);
 }
 
+/**
+ * This function creates the blinking effect of the health bar to represents that the user/bot is covering
+ */
 function cover(coverId) {
     let healthCover = document.getElementById(coverId);
 
@@ -265,6 +268,9 @@ function checkAnswer(userResult, cpuResult) {
     checkHealth();
 }
 
+/**
+ * This function creates the blinking effect of the health bar border to represent damage
+ */
 function userDamage(healthId) {
     let healthBar = document.getElementById(healthId);
 

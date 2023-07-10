@@ -8,11 +8,11 @@
 
 body {
     font-family: 'Cantora One', sans-serif;
-    min-height: 100vh;
+    height: 100vh;
     color:  white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-image: url(../images/space_background_image.jpg);
 }
@@ -141,7 +141,6 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* border: 1px solid white; */
     flex-shrink: 0;
 }
 
@@ -177,7 +176,7 @@ footer button {
 
 .shoot_lock_hover:hover {
     background-color: grey;
-    color: black;
+    color: white;
 }
 
 
@@ -186,7 +185,7 @@ footer button {
 .start_game,
 .restart_game,
 .no_ammo {
-    width: 400px; 
+    width: 80%; 
     background-color: black;
     border-radius: 6px;
     position: absolute;
@@ -274,6 +273,8 @@ footer button {
     font-size: 500%;
 }
 
+/* Media queries stylying */
+
 @media (max-height: 700px) {
     .start_game, 
     .restart_game,
@@ -325,7 +326,7 @@ footer button {
     .restart_game, 
     .no_ammo,
     .start_game {
-        width: 80%;
+        width: 90%;
         padding: 20px;
     }
     footer {
@@ -361,7 +362,7 @@ footer button {
     
 } 
 
-@media (max-width: 350px)  {
+@media (max-width: 400px)  {
     h1, h2 {
         transform: scale(0.9);
     }
@@ -370,7 +371,6 @@ footer button {
     }
     .game_area {
         height: auto;
-        min-height: 20vh;
     }
     img,
     #cpu_ammo_display,
@@ -385,4 +385,3 @@ footer button {
         font-size: 150%;
     }
 }
-

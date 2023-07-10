@@ -1,108 +1,99 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Battle of Jakku
 
-Welcome USER_NAME,
+The Battle of Jaku is an engaging online game inspired by the renowned Star Wars franchise. In this game, the user is presented with three exciting options, allowing them to make strategic decisions that shape their gameplay experience. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+responsive screenshot
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table of Contents
++ [UX](#ux)
++ [Design](#design)
++ [Features](#features)
++ [Testing](#testing)
++ [Technologies Used](technologies_used)
++ [Deployment](#deployment)
++ [Credits](#credits)
 
-## Gitpod Reminders
+## UX
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Site purpose
 
-`python3 -m http.server`
+The purpose of the site is to provide an interactive game where users engage by pressing buttons, receiving visual feedback for every action taken by the bot and the user.
 
-A blue button should appear to click: _Make Public_,
+### Site goal
 
-Another blue button should appear to click: _Open Browser_.
+Entertain users by presenting them with three distinct options and challenging them to strategize and determine the most effective choice to outsmart the bot.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Audience
 
-A blue button should appear to click: _Make Public_,
+The website is designed for Star Wars fans who seek an interactive gaming experience.
 
-Another blue button should appear to click: _Open Browser_.
+### Current User Goals
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Experience interactive engagement on the website and receive unique feedback based on the decisions made by either the user or the bot.
 
-To log into the Heroku toolbelt CLI:
+### Future User Goals
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Engage with the website
+- Have visual feedback of each action taken, such as blinking colors, appearing popups and hovering effects. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Design 
 
-------
+### Color Scheme 
 
-## Release History
+The website employs a streamlined monochromatic color scheme of black and white for the popups and titles, harmonizing with the deep space background. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+In terms of the "health bars," a visually intuitive traffic light color scheme is implemented: displaying vibrant green for optimal life levels, transitioning to yellow to indicate a moderate state, and intensifying to a striking red when life is nearing depletion. Furthermore, the blue color is applied to reflect the protective feedback of the cover action. 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The information popups feature a white shadow, while the winning and losing popups showcase a blue and red shadow respectively. These shadow colors represent the iconic and contrasting hues of the Star Wars Franchise, adding a touch of excitement and visual impact to the overall design.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Typography
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+The Cantora One font is applied to all elements within the body, as it closely resembles the trademarked Star Wars font available in Google Fonts. 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Imagery
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+The captivating deep space background image was acquired from [Freepik](https://www.freepik.com/) website, providing an immersive and atmospheric setting for the game. Additionally, the "avatars" for both the bot and user were obtained from [pngegg](https://www.pngegg.com/) website as vectors, enabling the space ships to seamlessly integrate with the cosmic surroundings, resulting in a harmonious visual composition.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The button and ammunition icons were sourced from [Font Awesome](https://fontawesome.com/), ensuring a visually appealing interface.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Existing Features
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+#### Initial popups 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Upon loading the website, an initial popup promptly appears on the screen, providing an immediate point of interaction and engagement for the user:
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+SCREENSHOT OF INITIAL POPUP
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The popup features an engaging storyline to intrigue the user, along with concise instructions on how to play. By simply clicking the button, the user is transported to the gaming platform, ready to begin their playthrough. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### Home page
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+The game interface features a header title and a concise paragraph restating the game's purpose. Below that, you'll find the game area displaying the health bar, avatar, and ammunition count for both the bot and the user. These components provide a clear overview of the essential elements in the game. 
 
-------
+Following that, the user controls are presented as three distinct buttons, allowing players to interact and exert control over their gameplay experience.
 
-## FAQ about the uptime script
+#### Gameplay
 
-**Why have you added this script?**
+The game's main goal is to shoot the enemy while they are reloading. The user has three options: cover, reload, and shoot. Cover and reload can be chosen at any time, but shooting requires available ammunition. Each shot reduces the ammunition count, which gradually increases as the player reloads. Simultaneously, the bot will choose the same set of options. If it has ammunition available, it will randomly select one of the three options. However, if it doesn't have ammunition, it will randomly choose between cover or reload as its course of action.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### Feedback queues 
 
-**How will this affect me?**
+To enrich the static game experience, visual feedback is employed to provide users with immediate responses to their decisions. 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- When selecting cover, the button hovers in blue, and the health bars blink between black and blue. 
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- Reloading triggers a green hover effect on the button and a blinking green ammunition count, indicating the increase in ammunition. 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- The shoot button hovers in red when ammunition is available. When ammunition is depleted, the shoot button turns grey and the hover effect is disabled. Clicking the grey button triggers an information popup explaining that shooting is not possible at the moment and the amminution count will turn red.
 
-**So….?**
+- When either the bot or the user gets hit (e.g., the user shoots while the bot is reloading, or vice versa), the border of the health bar for the affected player flashes in red. Additionally, the health bar is reduced by 20% to reflect the impact. If the player's health falls below 70%, the shadow of the health bar changes to yellow, indicating a diminished health status. Furthermore, if the player's health drops below 30%, the shadow shifts to red, symbolizing a critical condition where life is nearing its end.
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- When the user emerges victorious, a popup with a blue shadow appears, congratulating them with a brief story conclusion and an option to play again. In the event of the bot's victory, a different popup with a red shadow appears, indicating the user's defeat and providing the option to play again.
 
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+Testing
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+code
 ```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
