@@ -148,6 +148,7 @@ footer button {
     padding-bottom: 20px; */
     background-color: rgba(177,239,6, 0.8);
     border: 1px solid blue;
+    transition: all .4s ease;
 }
 
 
@@ -191,6 +192,7 @@ footer button {
     color: white;
     visibility: visible;
     z-index: 1000;
+    box-shadow: 0 0 20px 20px white;
 }
 
 .close_popup {
@@ -225,6 +227,18 @@ footer button {
     color: white;
     visibility: hidden;
     z-index: 1000;
+}
+
+.no_ammo {
+    box-shadow: 0 0 20px 20px red;
+}
+
+#cpu_win_popup {
+    box-shadow: 0 0 20px 20px red;
+}
+
+#user_win_popup {
+    box-shadow: 0 0 20px 20px blue;
 }
 
 .open_popup {
