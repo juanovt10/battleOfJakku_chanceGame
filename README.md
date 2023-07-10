@@ -94,11 +94,66 @@ To enrich the static game experience, visual feedback is employed to provide use
 
 ## Testing
 
-The most challenging areas where css and js. For the css the best solutin was 100vh for body and auto for the game areas. For the js issue I used the timestuff. This was applied to all blinking functions 
+The most challenging areas where css and js. For the css the best solutin was 100vh for body and auto for the game areas. For the js issue I used the timestuff. This was applied to all blinking functions.
+
+
+
 
 ```
 code
 ```
 
 ### Validator testing
-- 
+- The html file passed through the [W3C validator](https://validator.w3.org/) with no issues.
+- The CSS file passed through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues. 
+- The JS script passsed through the [jshint validator](https://jshint.com/) by only displaying the let vs var at the moment of declaring variables. 
+- The page has an excellent Accessibility rating in Lighthouse 
+- Tested the site in Chrome, Safari and Edge
+
+### Unfixed bugs 
+
+The primary challenge encountered in this project revolved around ensuring the responsiveness of the elements across various screen sizes. The issue primarily manifested when screens had limited height rather than width. To address this, I incorporated the 100vh property for the body to make the content fit within the viewport. However, for smaller screens, I set the height of elements with the .game_area class to auto to prevent avatar overlap. Despite these adjustments, it is important to note that on smaller screens, users may need to scroll down to access the buttons and engage in gameplay.
+
+## Technologies used
+
+### Programming languages used
+
+- HTML5
+- CSS
+- JavaScript
+
+### Frameworks, Libraries & programs used
+- Google fonts - for the font families: Cantora One. San-serif was used as a default font.
+- Font Awesome - to add icons for control buttons and the ammunition count
+- CodeAnywhere - to creat my html files, styling sheet and js script before pushing the project to Github.
+- GitHub - to store my repository for submission.
+- Am I Responsive? - to ensure the project looked good across all devices.
+
+### Deployment 
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+- In the GitHub repository, navigate to the Settings tab
+- On the left hand side menu, navigate to the pages tab user code and automation.
+- In build and deplyment, under branch, select the main Branch
+- Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+- The live link can be found [here - The Battle of Jakku]().
+
+## Credits 
+
+### Design 
+
+The main theme of the game draws inspiration from the iconic [Star Wars franchise](https://www.starwars.com/), incorporating various elements that pay homage to its aesthetic. One such element is the utilization of fading box shadows, resembling the lightsabers synonymous with the Star Wars universe. This design inspiration was derived from [GreatStack](https://www.youtube.com/watch?v=Odr24UQs3uY) and [CodeLab](https://www.youtube.com/watch?v=F7iFnhSZe7o) tutorials, which served as a creative influence in implementing these captivating visual effects.
+
+### Code
+
+Regarding the code, the main problem that I encountered was to make elements blink when an action was taken. To do this I explore various solutions and JS methods from the following websites: 
+
+- [freeCodeCamp](https://www.freecodecamp.org/news/javascript-settimeout-how-to-set-a-timer-in-javascript-or-sleep-for-n-seconds/#:~:text=To%20cancel%20a%20setTimeout(),call%20the%20setTimeout()%20method.)
+- [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout)
+- [W3Schools](https://www.w3schools.com/jsref/met_win_cleartimeout.asp)
+
+### Media
+
+The background image was taken from [freepik](https://www.freepik.com/free-photo/galaxy-night-landscape_13140050.htm#query=space%20stars&position=36&from_view=keyword&track=ais)
+
+The avatar pngs were taken from [pngegg - X-wing](https://www.pngegg.com/en/png-nkfii/download) and [pngegg - Imperial fighter](https://www.pngegg.com/en/png-tfxws/download)
