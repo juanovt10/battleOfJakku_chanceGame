@@ -32,19 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('user_health_bar').style.width = currentUserHealth;
         document.getElementById('cpu_health_bar').style.width = currentCpuHealth;
     }
-
-
-    // let currentUserHealth = '0%'
-    // document.getElementById('user_health_bar').style.height = currentUserHealth;
-
-    // let currentCpuHealth = '0%'
-    // document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
 })
 
 /**
  * This function is to close the intial and no ammo popup
  */
-
 function closePopup() {
     let startGamePopup = document.getElementById('start_game_popup');
     startGamePopup.classList.add('close_popup')
@@ -56,22 +48,28 @@ function closePopup() {
     ammoDisplay.style.color = 'white';
 }
 
-
 /**
  * This function defines when the game is over. It checks the health values of the players (height of div), and if this value is 100% it means that the player wins or loses
  */
 function checkHealth() {
-    let currentUserHealth = document.getElementById('user_health_bar').style.height;
-    let currentCpuHealth = document.getElementById('cpu_health_bar').style.height;
+    let currentUserHealth;
+    let currentCpuHealth;
+
+    if (window.innerWidth > 768) {
+        currentUserHealth = document.getElementById('user_health_bar').style.height;
+        currentCpuHealth = document.getElementById('cpu_health_bar').style.height;
+    } else {
+        currentUserHealth = document.getElementById('user_health_bar').style.width;
+        currentCpuHealth = document.getElementById('cpu_health_bar').style.width;
+    }
 
     if (currentUserHealth === '100%') {
         let losePopup = document.getElementById('cpu_win_popup'); 
         losePopup.classList.add('open_popup');
-        
+                
     } else if (currentCpuHealth === '100%') {
         let winPopup = document.getElementById('user_win_popup'); 
         winPopup.classList.add('open_popup');
-    
     }
 }
 
@@ -95,7 +93,6 @@ function reloadAmmo() {
 /**
  * This function creates the blinking effect in the ammo count with the symbol
  */
-
 function ammoBlink(ammoId) {
     
     let ammoElement = document.getElementById(ammoId);
@@ -212,21 +209,30 @@ function cover(coverId) {
 
 function checkAnswer(userResult, cpuResult) {
 
-    let currentUserHealth = parseInt((document.getElementById('user_health_bar').style.height).slice(0,1));
-    let currentCpuHealth = parseInt((document.getElementById('cpu_health_bar').style.height).slice(0,1));
-    
+    let currentUserHealth;
+    let currentCpuHealth;
+
+    if (window.innerWidth > 768) {
+        currentUserHealth = parseInt((document.getElementById('user_health_bar').style.height).slice(0,1));
+        currentCpuHealth = parseInt((document.getElementById('cpu_health_bar').style.height).slice(0,1));
+    } else {
+        currentUserHealth = parseInt((document.getElementById('user_health_bar').style.width).slice(0,1));
+        currentCpuHealth = parseInt((document.getElementById('cpu_health_bar').style.width).slice(0,1));
+    }
     if (userResult === 0 || cpuResult === 0) {
-        console.log('gameContinues');
+
     } else if (userResult === 1 && cpuResult === 1) {
-        console.log('gameContinues');
 
     } else if (userResult === 1 && cpuResult === 2) {
 
-        
         userDamage('user_health_bar_full');
-        console.log('gameOver');
         currentUserHealth += 2;
-        document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
+
+        if (window.innerWidth > 768) {
+            document.getElementById('user_health_bar').style.height = currentUserHealth + '0%';
+        } else {
+            document.getElementById('user_health_bar').style.width = currentUserHealth + '0%';
+        }
 
         if (currentUserHealth > 3 && currentUserHealth < 7) {
             document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px yellow';
@@ -237,9 +243,13 @@ function checkAnswer(userResult, cpuResult) {
     } else if (userResult === 2 && cpuResult === 1) {
 
         userDamage('cpu_health_bar_full');
-        console.log('youWin');
         currentCpuHealth += 2;
-        document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
+
+        if (window.innerWidth > 768) {
+            document.getElementById('cpu_health_bar').style.height = currentCpuHealth + '0%';
+        } else {
+            document.getElementById('cpu_health_bar').style.width = currentCpuHealth + '0%';
+        }
         
         if (currentCpuHealth > 3 && currentCpuHealth < 7) {
             document.getElementById('cpu_health_bar_full').style.boxShadow = '0 0 20px 20px yellow';
@@ -276,20 +286,19 @@ function userDamage(healthId) {
 }
 
 /**
- * This function restarts the ammo of both the user and cpu after, winning, losing or restarting
- */
-function restartAmmo() {
-    document.getElementById('user_ammo').innerText = 1;
-    document.getElementById('cpu_ammo').innerText = 1;
-}
-
-
-/**
  * This function restarts the health bars, the ammo to 1 and displays and is trigger play again button is pressed
  */
 function restartGame() {
-    document.getElementById('user_health_bar').style.height = '0%';
-    document.getElementById('cpu_health_bar').style.height = '0%';
+
+    if (window.innerWidth > 768) {
+        document.getElementById('user_health_bar').style.height = '0%';
+        document.getElementById('cpu_health_bar').style.height = '0%';
+    } else {
+        document.getElementById('user_health_bar').style.width = '0%';
+        document.getElementById('cpu_health_bar').style.width = '0%';
+    }
+    // document.getElementById('user_health_bar').style.height = '0%';
+    // document.getElementById('cpu_health_bar').style.height = '0%';
 
     document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px green';
     document.getElementById('cpu_health_bar_full').style.boxShadow = '0 0 20px 20px green';
@@ -300,5 +309,6 @@ function restartGame() {
     let losePopup = document.getElementById('cpu_win_popup'); 
     losePopup.classList.remove('open_popup');
 
-    restartAmmo();
+    document.getElementById('user_ammo').innerText = 1;
+    document.getElementById('cpu_ammo').innerText = 1;
 }
