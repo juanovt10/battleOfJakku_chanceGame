@@ -5,25 +5,25 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener('click', function() {
             if (this.getAttribute('data-type') === 'cover') {
-                checkHealth()
+                checkHealth();
                 pushAnswer('cover');
                 cover('user_health_bar_full');
             } else if (this.getAttribute('data-type') === 'reload') {
-                checkHealth()
+                checkHealth();
                 reloadAmmo(); 
             } else if ((this.getAttribute('data-type') === 'shoot')) {
-                checkHealth()
+                checkHealth();
                 ammoCheck();
             } else if (((this.getAttribute('data-type') === 'restart'))){
                 restartGame();
             } else {
                 closePopup();
             }
-        })
+        });
     }
     
-    let currentUserHealth = '0%'
-    let currentCpuHealth = '0%'
+    let currentUserHealth = '0%';
+    let currentCpuHealth = '0%';
     
     if (window.innerWidth > 768) {
         document.getElementById('user_health_bar').style.height = currentUserHealth;
@@ -32,17 +32,17 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('user_health_bar').style.width = currentUserHealth;
         document.getElementById('cpu_health_bar').style.width = currentCpuHealth;
     }
-})
+});
 
 /**
  * This function is to close the intial and no ammo popup
  */
 function closePopup() {
     let startGamePopup = document.getElementById('start_game_popup');
-    startGamePopup.classList.add('close_popup')
+    startGamePopup.classList.add('close_popup');
 
     let noAmmoPopup = document.getElementById('no_ammo_popup');
-    noAmmoPopup.classList.remove('open_popup')
+    noAmmoPopup.classList.remove('open_popup');
     
     let ammoDisplay = document.getElementById('user_ammo_display');
     ammoDisplay.style.color = 'white';
@@ -130,7 +130,7 @@ function ammoCheck() {
         pushAnswer('shoot');
         document.getElementById('user_ammo').innerText = --userAmmo;
     } else {
-        noAmmoPopup.classList.add('open_popup')
+        noAmmoPopup.classList.add('open_popup');
         ammoDisplay.style.color = 'red';
         shootBtn.classList.add('shoot_lock');
         shootBtn.classList.add('shoot_lock_hover');
@@ -145,7 +145,7 @@ function ammoCheck() {
  */
 function pushAnswer(userSelection) {
 
-    let userSelectionArea = document.getElementById('user_selection_decision');
+    let userResult; 
 
     if (userSelection === 'cover') {
         userResult = 0;
@@ -155,18 +155,16 @@ function pushAnswer(userSelection) {
         userResult = 2;
     }
 
-    let userAmmo = parseInt(document.getElementById('user_ammo').innerText); 
     let cpuAmmo = parseInt(document.getElementById('cpu_ammo').innerText);
+    let cpuResult;
 
     if (cpuAmmo != 0) {
-        cpuResult = Math.floor(Math.random() * 3)
+        cpuResult = Math.floor(Math.random() * 3);
     } else {
-        cpuResult = Math.floor(Math.random() * 2)
+        cpuResult = Math.floor(Math.random() * 2);
     }
 
-    let cpuSelectionArea = document.getElementById('cpu_selection_decision');
-
-    console.log(cpuResult)
+    console.log(cpuResult);
 
     if (cpuResult === 0) { 
         cover('cpu_health_bar_full');
@@ -174,7 +172,7 @@ function pushAnswer(userSelection) {
         document.getElementById('cpu_ammo').innerText = ++cpuAmmo;
         ammoBlink('cpu_ammo_display');
     } else if (cpuResult === 2) {
-        document.getElementById('cpu_ammo').innerText = --cpuAmmo
+        document.getElementById('cpu_ammo').innerText = --cpuAmmo;
     }
 
     checkAnswer(userResult, cpuResult);
