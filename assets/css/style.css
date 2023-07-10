@@ -22,7 +22,7 @@ body {
 header {
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 25px 25px 0 25px;
 }
 
 h1 {
@@ -274,9 +274,36 @@ footer button {
     font-size: 500%;
 }
 
+@media (max-height: 700px) {
+    .start_game, 
+    .restart_game,
+    .no_ammo {
+        width: 80%;
+        padding: 20px;
+    }
+    h1, h2 {
+        transform: scale(0.9);
+    }
+    p {
+        transform: scale(0.8);
+    }
+    .game_area {
+        height: 30vh;
+    }
+    img,
+    #cpu_ammo_display,
+    #user_ammo_display {
+        transform: scale(0.6);
+    }
+    .user_controls i {
+        font-size: 250%;
+    }
+}
+
 @media (max-width: 768px) {
     .game_area {
         flex-wrap: wrap;
+        height: 30vh;
     }
     .health_area {
         width: 100%;
@@ -334,7 +361,7 @@ footer button {
     
 } 
 
-@media (max-width: 350px), (max-height: 700px) {
+@media (max-width: 350px)  {
     h1, h2 {
         transform: scale(0.9);
     }
@@ -357,14 +384,5 @@ footer button {
     .user_controls i {
         font-size: 150%;
     }
-    
-
 }
 
-@media (max-height: 500px) {
-    .start_game, 
-    .restart_game,
-    .no_ammo {
-        top: 80%;
-    }
-}
