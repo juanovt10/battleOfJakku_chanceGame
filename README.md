@@ -2,7 +2,9 @@
 
 The Battle of Jaku is an engaging online game inspired by the renowned Star Wars franchise. In this game, the user is presented with three exciting options, allowing them to make strategic decisions that shape their gameplay experience. 
 
-responsive screenshot
+![Responsive test](assets/readme_images/responsive_test_readme.png)
+
+The Battle of Jakku website is live, to access it [click here.](https://juanovt10.github.io/battleOfJakku_chanceGame/)
 
 ## Table of Contents
 + [UX](#ux)
@@ -60,11 +62,11 @@ The button and ammunition icons were sourced from [Font Awesome](https://fontawe
 
 ### Existing Features
 
-#### Initial popups 
+#### Initial popup 
 
 Upon loading the website, an initial popup promptly appears on the screen, providing an immediate point of interaction and engagement for the user:
 
-SCREENSHOT OF INITIAL POPUP
+![Initial popup](assets/readme_images/initial_popup_readme.png)
 
 The popup features an engaging storyline to intrigue the user, along with concise instructions on how to play. By simply clicking the button, the user is transported to the gaming platform, ready to begin their playthrough. 
 
@@ -73,6 +75,8 @@ The popup features an engaging storyline to intrigue the user, along with concis
 The game interface features a header title and a concise paragraph restating the game's purpose. Below that, you'll find the game area displaying the health bar, avatar, and ammunition count for both the bot and the user. These components provide a clear overview of the essential elements in the game. 
 
 Following that, the user controls are presented as three distinct buttons, allowing players to interact and exert control over their gameplay experience.
+
+![Game area](assets/readme_images/game_area_readme.png)
 
 #### Gameplay
 
@@ -84,29 +88,82 @@ To enrich the static game experience, visual feedback is employed to provide use
 
 - When selecting cover, the button hovers in blue, and the health bars blink between black and blue. 
 
+![Cover button hover](assets/readme_images/cover_button_readme.png)
+
 - Reloading triggers a green hover effect on the button and a blinking green ammunition count, indicating the increase in ammunition. 
+
+![Reload button hover](assets/readme_images/reload_button_readme.png)
 
 - The shoot button hovers in red when ammunition is available. When ammunition is depleted, the shoot button turns grey and the hover effect is disabled. Clicking the grey button triggers an information popup explaining that shooting is not possible at the moment and the amminution count will turn red.
 
+![Shoot button hover](assets/readme_images/shoot_button_readme.png)
+![No ammo feedback](assets/readme_images/no_ammo_feedback_readme.png)
+
 - When either the bot or the user gets hit (e.g., the user shoots while the bot is reloading, or vice versa), the border of the health bar for the affected player flashes in red. Additionally, the health bar is reduced by 20% to reflect the impact. If the player's health falls below 70%, the shadow of the health bar changes to yellow, indicating a diminished health status. Furthermore, if the player's health drops below 30%, the shadow shifts to red, symbolizing a critical condition where life is nearing its end.
+
+![Health bar status](assets/readme_images/health_bars_readme.png)
 
 - When the user emerges victorious, a popup with a blue shadow appears, congratulating them with a brief story conclusion and an option to play again. In the event of the bot's victory, a different popup with a red shadow appears, indicating the user's defeat and providing the option to play again.
 
+![Lose popup](assets/readme_images/lose_popup_readme.png)
+![Win popup](assets/readme_images/win_popup_readme.png)
+
 ## Testing
 
-The most challenging areas where css and js. For the css the best solutin was 100vh for body and auto for the game areas. For the js issue I used the timestuff. This was applied to all blinking functions.
-
-
-
+The CSS and JavaScript aspects presented significant challenges in this project. One notable issue was implementing the blinking effect for the health bars and ammunition count, synchronizing them with the actions of both the user and the bot. Extensive research was conducted to find a viable solution, resulting in the following approach:
 
 ```
-code
+let ammoElement = document.getElementById(ammoId);
+
+    ammoElement.style.color = 'green';
+
+    function toggleColor() {
+        if (ammoElement.style.color === 'green') {
+        ammoElement.style.color = 'white';
+        } else {
+        ammoElement.style.color = 'green';
+        }
+    }
+
+    let interval = setInterval(toggleColor, 200);
+
+    setTimeout(function () {
+        clearInterval(interval);
+        ammoElement.style.color = 'white';
+    }, 400);
 ```
+
+To implement the aforementioned solution, I utilized the getElementById method to select the desired element for the blinking effect. Subsequently, I assigned the blink color and defined a function responsible for checking the current color state of the element and toggling it to its opposite. I then established an interval variable to repeatedly call the toggle function at intervals of 200ms. Finally, using the setTimeout method, I cleared the previously defined interval after double the time duration, allowing the complete sequence to span 400ms.
+
+This similar code was applied to the following functions: 
+- ammoBlink()
+- cover()
+- userDamage()
+
+Another challenge in the JS script involved adjusting the health bars to decrease from left to right when the screens are 768px wide or smaller. To accomplish this, I utilized the window.innerWidth property to obtain the width of the screen and incorporated it into several functions to determine whether the affected value of the health bar should be the width or the height. This dynamic approach allowed for responsive adjustments to the health bar direction based on the screen width, ensuring a consistent and optimal user experience.
+
+```
+if (window.innerWidth > 768) {
+        document.getElementById('user_health_bar').style.height = currentUserHealth;
+        document.getElementById('cpu_health_bar').style.height = currentCpuHealth;
+    } else {
+        document.getElementById('user_health_bar').style.width = currentUserHealth;
+        document.getElementById('cpu_health_bar').style.width = currentCpuHealth;
+    }
+```
+
+The if statement for the health bars was used in the following functions: 
+- Initial function of the DOMContentLoaded event listener
+- checkHealth()
+- checkAnswer()
+- restartGame()
+
+The final challenge involved ensuring that all elements fit within a single page on various screen sizes. To achieve this, I set the height of the body element as 100vh, allowing it to occupy the full viewport. I then implemented appropriate media queries to accommodate different screen sizes. However, it is important to note that for smaller mobile phones, scrolling may be necessary to visualize the entire game interface due to space constraints. By adapting the layout to different screen sizes, the goal was to optimize the user experience while providing a seamless gameplay environment.
 
 ### Validator testing
-- The html file passed through the [W3C validator](https://validator.w3.org/) with no issues.
-- The CSS file passed through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues. 
-- The JS script passsed through the [jshint validator](https://jshint.com/) by only displaying the let vs var at the moment of declaring variables. 
+- The html file passed through the [W3C validator](https://validator.w3.org/) with no issues. ![HTML5 validator test](assets/readme_images/html_test_readme.png)
+- The CSS file passed through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues. ![CSS validator test](assets/readme_images/css_test_readme.png)
+- The JS script passsed through the [jshint validator](https://jshint.com/) by only displaying the let vs var at the moment of declaring variables. ![JavaScript validator testing](assets/readme_images/js_test_readme.png)
 - The page has an excellent Accessibility rating in Lighthouse 
 - Tested the site in Chrome, Safari and Edge
 
