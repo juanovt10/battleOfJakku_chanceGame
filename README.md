@@ -164,7 +164,7 @@ The final challenge involved ensuring that all elements fit within a single page
 - The html file passed through the [W3C validator](https://validator.w3.org/) with no issues. ![HTML5 validator test](assets/readme_images/html_test_readme.png)
 - The CSS file passed through the [Jigsaw validator](https://jigsaw.w3.org/css-validator/) with no issues. ![CSS validator test](assets/readme_images/css_test_readme.png)
 - The JS script passsed through the [jshint validator](https://jshint.com/) by only displaying the let vs var at the moment of declaring variables. ![JavaScript validator testing](assets/readme_images/js_test_readme.png)
-- The page has an excellent Accessibility rating in Lighthouse 
+- The page has an excellent Accessibility rating in Lighthouse. ![Lighthouse report](assets/readme_images/lighthouse_report_readme.png)
 - Tested the site in Chrome, Safari and Edge
 
 ### Unfixed bugs 
