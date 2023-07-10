@@ -161,7 +161,7 @@ footer button {
     color: white;
 }
 
-#selection_shoot:hover {
+.selection_shoot:hover {
     background-color: rgba(255,0,0, 0.5);
     color: white;
 }
@@ -170,9 +170,9 @@ footer button {
     background-color: grey;
 }
 
-.shoot_lock:hover {
+.shoot_lock_hover:hover {
     background-color: grey;
-    color: white;
+    color: black;
 }
 
 

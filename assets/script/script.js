@@ -84,6 +84,7 @@ function reloadAmmo() {
     document.getElementById('user_ammo').innerText = ++userAmmo;
     
     shootBtn.classList.remove('shoot_lock');
+    shootBtn.classList.remove('shoot_lock_hover');
 
     ammoBlink('user_ammo_display');
 
@@ -107,7 +108,7 @@ function ammoBlink(ammoId) {
         }
     }
 
-    var interval = setInterval(toggleColor, 200);
+    let interval = setInterval(toggleColor, 200);
 
     setTimeout(function () {
         clearInterval(interval);
@@ -132,7 +133,7 @@ function ammoCheck() {
         noAmmoPopup.classList.add('open_popup')
         ammoDisplay.style.color = 'red';
         shootBtn.classList.add('shoot_lock');
-        // shootBtn.classList.remove('shoot_lock:hover');
+        shootBtn.classList.add('shoot_lock_hover');
     }
 }
 
@@ -192,7 +193,7 @@ function cover(coverId) {
         }
     }
 
-    var interval = setInterval(toggleColor, 200);
+    let interval = setInterval(toggleColor, 200);
 
     setTimeout(function () {
         clearInterval(interval);
@@ -277,7 +278,7 @@ function userDamage(healthId) {
         }
     }
 
-    var interval = setInterval(toggleColor, 200);
+    let interval = setInterval(toggleColor, 200);
 
     setTimeout(function () {
         clearInterval(interval);
@@ -297,8 +298,6 @@ function restartGame() {
         document.getElementById('user_health_bar').style.width = '0%';
         document.getElementById('cpu_health_bar').style.width = '0%';
     }
-    // document.getElementById('user_health_bar').style.height = '0%';
-    // document.getElementById('cpu_health_bar').style.height = '0%';
 
     document.getElementById('user_health_bar_full').style.boxShadow = '0 0 20px 20px green';
     document.getElementById('cpu_health_bar_full').style.boxShadow = '0 0 20px 20px green';
