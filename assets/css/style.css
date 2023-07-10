@@ -148,11 +148,10 @@ footer {
 footer button {
     height: 100%; 
     width: 33%;
-    color:black;
-    /* padding-top: 20px;
-    padding-bottom: 20px; */
-    background-color: rgba(177,239,6, 0.8);
-    border: 1px solid blue;
+    color:white;
+    border-radius: 10px;
+    border: 1px white outset;
+    background-color: black;
     transition: all .4s ease;
 }
 
